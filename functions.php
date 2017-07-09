@@ -37,7 +37,6 @@ class StarterSite extends TimberSite {
 	}
 
 	function add_to_context( $context ) {
-		$context['foo'] = 'bar';
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
 		$context['menu'] = new TimberMenu();
@@ -60,3 +59,10 @@ class StarterSite extends TimberSite {
 }
 
 new StarterSite();
+
+
+add_action( 'wp_enqueue_scripts');
+
+function enqueue_parent_styles() {
+   wp_enqueue_style(get_template_directory_uri().'/dist/stylesheets/app.css' );
+}

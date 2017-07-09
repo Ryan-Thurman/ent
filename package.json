@@ -1,0 +1,22 @@
+{
+  "name": "idw_ent",
+  "version": "1.0.0",
+  "description": "Theme",
+  "scripts": {
+    "start": "brunch watch --server",
+    "build": "brunch build --production"
+  },
+  "author": "Ryan",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "auto-reload-brunch": "^2.7.1",
+    "browser-sync-brunch": "^0.0.9",
+    "brunch": "^2.10.9",
+    "clean-css-brunch": "^2.10.0",
+    "stylus-brunch": "^2.10.0"
+  }
+}
