@@ -14,13 +14,20 @@ exports.config = {
       }
     },
     paths: {
-        public: '/',
-        watched: [ 'src' ]
+        public: 'dist',
+        watched: [ 'src', "templates" ]
     },
     plugins: {
         stylus: {
             includeCss: true
-        }
+        },
+        browserSync: {
+          port: 3333,
+          proxy: {
+              target: "http://idwent.dev/"
+          },
+          logLevel: "debug"
+      }
     },
     modules: {
         nameCleaner: path => path.replace(/^src\//, '')
@@ -29,11 +36,12 @@ exports.config = {
         enabled: true,
         globals: {
             $: 'jquery/dist/jquery.js',
-            jQuery: 'jquery/dist/jquery.js',
-            bootstrap: 'bootstrap/dist/js/bootstrap'
+            jQuery: 'jquery/dist/jquery.js'
         }
     },
-    server: {
-        run: true
-    }
+    conventions: {
+        ignored: [
+            /^(.*?\/)?[_]\w*/
+        ]
+    },
 }

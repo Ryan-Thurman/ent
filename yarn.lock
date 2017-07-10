@@ -33,20 +33,20 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
 angular-route@^1.3.8:
-  version "1.6.4"
-  resolved "https://registry.yarnpkg.com/angular-route/-/angular-route-1.6.4.tgz#7bb216fcda746a1b8c452054b05900a7074ecc62"
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/angular-route/-/angular-route-1.6.5.tgz#af45593299f55874d0261018adb11520a3817d2a"
 
 angular-sanitize@^1.3.11:
-  version "1.6.4"
-  resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.6.4.tgz#60a37ea96fb0d4a322a3ccb64ee4a5cf3b154f0c"
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.6.5.tgz#b5625a817afad2ba58c333e98eef169a1c6f517a"
 
 angular-touch@^1.3.11:
-  version "1.6.4"
-  resolved "https://registry.yarnpkg.com/angular-touch/-/angular-touch-1.6.4.tgz#02750fccf77ca0ed949a6d1321263abb0f86b223"
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/angular-touch/-/angular-touch-1.6.5.tgz#8d51bdececd03bde15dcdaa777d9bb6a54c82afd"
 
 angular@^1.3.11:
-  version "1.6.4"
-  resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.4.tgz#03b7b15c01a0802d7e2cf593240e604054dc77fb"
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.5.tgz#37f788eebec5ce2e3fa02b17bbcb2a231576a0d6"
 
 ansi-regex@^2.0.0:
   version "2.1.1"
@@ -91,8 +91,8 @@ arr-diff@^2.0.0:
     arr-flatten "^1.0.1"
 
 arr-flatten@^1.0.1:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/arr-flatten/-/arr-flatten-1.0.3.tgz#a274ed85ac08849b6bd7847c4580745dc51adfb1"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/arr-flatten/-/arr-flatten-1.1.0.tgz#36048bbff4e7b47e136644316c99669ea5ae91f1"
 
 array-find-index@^1.0.1:
   version "1.0.2"
@@ -230,10 +230,6 @@ boom@2.x.x:
   resolved "https://registry.yarnpkg.com/boom/-/boom-2.10.1.tgz#39c8918ceff5799f83f9492a848f625add0c766f"
   dependencies:
     hoek "2.x.x"
-
-bootstrap@^3.3.7:
-  version "3.3.7"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
 
 bower-config@^1.4.0:
   version "1.4.0"
@@ -484,10 +480,11 @@ chokidar@^1.6:
     fsevents "^1.0.0"
 
 cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/cipher-base/-/cipher-base-1.0.3.tgz#eeabf194419ce900da3018c207d212f2a6df0a07"
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/cipher-base/-/cipher-base-1.0.4.tgz#8760e4ecc272f4c363532f926d874aae2c1397de"
   dependencies:
     inherits "^2.0.1"
+    safe-buffer "^5.0.1"
 
 clean-css-brunch@^2.10.0:
   version "2.10.0"
@@ -1229,7 +1226,7 @@ glob-watcher@^0.0.7:
   dependencies:
     gaze "^0.5.1"
 
-glob@7.0.x:
+glob@7.0.x, glob@^7.0.3, glob@^7.0.5:
   version "7.0.6"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.0.6.tgz#211bafaf49e525b8cd93260d14ab136152b3f57a"
   dependencies:
@@ -1247,17 +1244,6 @@ glob@^6.0.4:
     inflight "^1.0.4"
     inherits "2"
     minimatch "2 || 3"
-    once "^1.3.0"
-    path-is-absolute "^1.0.0"
-
-glob@^7.0.3, glob@^7.0.5:
-  version "7.1.2"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.2.tgz#c19c9df9a028702d678612384a6552404c636d15"
-  dependencies:
-    fs.realpath "^1.0.0"
-    inflight "^1.0.4"
-    inherits "2"
-    minimatch "^3.0.4"
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
@@ -1357,8 +1343,8 @@ hash-base@^2.0.0:
     inherits "^2.0.1"
 
 hash.js@^1.0.0, hash.js@^1.0.3:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/hash.js/-/hash.js-1.1.2.tgz#bf5c887825cfe40b9efde7bf11bd2db26e6bf01b"
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/hash.js/-/hash.js-1.1.3.tgz#340dedbe6290187151c1ea1d777a3448935df846"
   dependencies:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.0"
@@ -1840,7 +1826,7 @@ minimalistic-crypto-utils@^1.0.0, minimalistic-crypto-utils@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
 
-"minimatch@2 || 3", minimatch@^3.0.0, minimatch@^3.0.2, minimatch@^3.0.4:
+"minimatch@2 || 3", minimatch@^3.0.0, minimatch@^3.0.2:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
   dependencies:
