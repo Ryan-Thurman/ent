@@ -22,10 +22,6 @@ exports.config = {
             includeCss: true
         }
     },
-    browserSync: {
-        port: 3333,
-        logLevel: "debug"
-    },
     modules: {
         nameCleaner: path => path.replace(/^src\//, '')
     },
@@ -36,5 +32,8 @@ exports.config = {
             jQuery: 'jquery/dist/jquery.js',
             bootstrap: 'bootstrap/dist/js/bootstrap'
         }
+    },
+    server: {
+        run: true
     }
 }

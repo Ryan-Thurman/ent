@@ -13,6 +13,7 @@ if ( ! class_exists( 'Timber' ) ) {
 }
 
 Timber::$dirname = array('templates', 'views');
+Timber::$locations = get_template_directory() . "/templates/Home";
 
 class StarterSite extends TimberSite {
 
