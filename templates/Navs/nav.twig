@@ -1,0 +1,85 @@
+<script>require('javascript/search.js')</script>
+
+<nav class="navbar navbar-default" id='header-nav'>
+	<div class="container-fluid">
+		
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#home-nav" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+			<a class="navbar-brand" href="/">
+				<div class="brand-image-container">
+					<img src="http://via.placeholder.com/100x100" alt="">
+				</div>
+			</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse main-section" id="home-nav">
+			<ul class="nav navbar-nav">
+				<li>
+					<a href="/about">ABOUT</a>
+				</li>
+				<li class="divider"></li>
+				<li>
+					<a href="/news-landing">NEWS</a>
+				</li>
+				<li class="divider"></li>
+				<li>
+					<li>
+						<a href="/active-projects">ACTIVE PROJECTS</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="/contact">CONTACT</a>
+					</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a>
+						<span class="glyphicon glyphicon-search show"></span>
+						<span class="glyphicon glyphicon-remove no-show"></span>
+					</a>
+				</li>
+				<li class="divider"></li>
+				<li>
+					<span class='nav-non-link'> FOLLOW </span>
+				</li>
+				<li>
+					<a href="">
+							<i class="fa fa-facebook"></i>
+						</a>
+				</li>
+				<li>
+					<a href="">
+					<i class="fa fa-twitter"></i>
+						</a>
+				</li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container-fluid -->
+	<div class="container-fluid " id="nav-search">
+		<div class="container">
+			<div class="row" style="padding: 0 5%;">
+
+				<form role="search" method="get" class="" action="{{site.link}}">
+				<div class="col-xs-9">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Search IDW Entertainment" value="" name="s"  />
+				</div>
+					
+				</div>
+				<div class="col-xs-2" style="line-height: 3;">
+					<button type="submit" class="btn btn-yellow" value="Search">SEARCH</button>
+				</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</nav>

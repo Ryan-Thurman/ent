@@ -1,0 +1,21 @@
+{% block projects %}
+
+<div class="container" id="featured-projects">
+	<div style="text-align: center; margin: 1% 0;">
+		<h4>FEATURED PROJECTS</h4>
+	</div>
+	<div class="swiper-container" data-spv='3'>
+		<div class="swiper-wrapper">
+			{% for project in projects %}
+			<a class="swiper-slide" href="{{project.link}}">
+				<img src="http://via.placeholder.com/300x150" alt="">
+				<div class='image-overlay'></div>
+				<p class="project-title">{{project.title}}</p>
+				</a> {% endfor %}
+		</div>
+		<!-- Add Pagination -->
+		<div class="swiper-pagination"></div>
+	</div>
+</div>
+
+{% endblock %}

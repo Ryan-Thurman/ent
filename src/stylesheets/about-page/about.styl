@@ -1,0 +1,63 @@
+@import "../../stylesheets/_vars.styl"
+
+h3
+	color: $dark-gray
+	text-align: center
+#top
+	text-align: center
+	padding: 3% 15%
+	.col-xs-12
+		margin-bottom: 1%
+	button
+		margin-top: 2.5%
+#our-team
+	background-color: $light-gray
+	padding: 0 5% 4% 5%
+	a
+		text-decoration: none
+	h3
+		margin: 3% auto
+	.card
+		margin: 0 auto
+		&:hover > .image-container > .image-overlay
+			opacity: .6
+		&:hover > .image-container > .bio-click
+				opacity: 1
+		.image-container
+			height: 100%
+			width: 100%
+			position: relative	
+			img
+				width: 100%
+			.bio-click
+				font-family: "Nudista-bold", sans-serif
+				position: absolute
+				top: 45%
+				left: 20%
+				right: 15%
+				font-size: 24px
+				color: #fff
+				opacity: 0
+				width: 100%
+		.card-block
+			background-color: $dark-blue
+			color: #fff
+			padding: 3% 0
+			.card-text
+				font-size 22px
+			.card-title
+				font-size: 14px
+				opacity: .6
+#summary-content
+	padding: 5% 15%
+	img
+		width: 100%
+		margin-bottom: 2%
+	p
+		opacity: .6
+		font-size: 14px
+#quote-section
+	background: $light-gray
+	padding: 2% 15%
+	h2
+		margin-bottom: 2%

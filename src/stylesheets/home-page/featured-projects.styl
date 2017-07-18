@@ -1,0 +1,33 @@
+@import "../../stylesheets/_vars.styl"
+
+#featured-projects
+	margin: 2% auto
+	h4
+		color: $dark-gray
+		margin-bottom: 2%
+	.swiper-container
+		height: 20em
+		a
+			text-decoration: none
+		.swiper-slide
+			text-align: center
+			height: 75%
+			width: 90%
+			&:hover > .project-title
+				opacity: 1
+			&:hover > .image-overlay
+				opacity: .6
+			img
+				height: 100%
+				width: 100%
+			.project-title
+				font-family: "Nudista-bold", sans-serif
+				position: absolute
+				top: 35%
+				left: 20%
+				right: 20%
+				font-size: 24px
+				color: #fff
+				opacity: 0
+		.swiper-pagination
+			bottom: -2px

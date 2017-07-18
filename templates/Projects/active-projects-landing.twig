@@ -1,0 +1,38 @@
+{% extends "base.twig" %} 
+
+{% block content %} 
+
+{% include 'splash-carousel.twig' %}
+
+<div class="container" id="project-landing">
+	<div class="row">
+		<h4>OUR ACTIVE PROJECTS</h4>
+		{% for project in projects %}
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<a href="{{project.link}}">
+				<div class="card">
+					<div class="image-container">
+						<img class="card-img-top" src="http://via.placeholder.com/300x200" alt="Card image cap">
+						<div class="image-overlay"></div>
+					</div>
+					<div class="card-block">
+						<div class="card-title">
+							{{project.title}}
+						</div>
+						<div class="project-categories">
+							{% for cat in project.categories %}
+							<span>{{cat|title}}</span> {% endfor %}
+						</div>
+						<div class="project-categories-icons">
+							{% for cat in project.categories %}
+							<div class="c_icon {{cat}}"></div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

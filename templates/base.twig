@@ -7,7 +7,7 @@
 {% endblock %}
 
 	<body class="{{body_class}}" data-template="base.twig">
-		<header class="header" >
+		<header class="header">
 			{% block header %}
 				{% include 'universal-nav.twig' %}
 				{% include 'nav.twig'%}
@@ -15,7 +15,7 @@
 		</header>
 
 		<section id="content" role="main" class="content-wrapper">
-				{% block home %}
+				{% block content %}
 				{% endblock %}
 		</section>
 

@@ -1,0 +1,29 @@
+{% extends "base.twig" %} {% block content %}
+<div class="container-fluid" id="bio-page">
+	<div class="row">
+		<div class="col-xs-12">
+			<h4 class="center">TEAM MEMBER BIO</h4>
+		</div>
+		<div class="col-xs-12 name">
+			<h2 class="center">{{post.title}}</h2>
+			<h6 class="center">{{post.get_field('company_title')}}</h6>
+		</div>
+		<div class="col-xs-12 bio-summary-section">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 center">
+					<div class="image-container">
+						<img src="http://via.placeholder.com/400x500" alt="">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<p>{{post.content}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 center">
+			<h3>VIEW OTHER TEAM MEMBERS</h3>
+			<a href="/about" class="btn btn-yellow">VIEW</a>
+		</div>
+	</div>
+</div>
+{% endblock %}

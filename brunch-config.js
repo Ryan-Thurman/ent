@@ -36,7 +36,7 @@ exports.config = {
         enabled: true,
         globals: {
             $: 'jquery/dist/jquery.js',
-            jQuery: 'jquery/dist/jquery.js'
+						jQuery: 'jquery/dist/jquery.js'
         }
     },
     conventions: {

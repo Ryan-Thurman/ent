@@ -1,0 +1,42 @@
+@import "../../stylesheets/_vars.styl"
+
+.single-news-section
+	padding-top: 3%
+	h1
+		color: $dark-blue
+		margin-bottom: 2%
+	p
+		opacity: .8
+	.image-container-article
+		margin-bottom: 3%
+		img
+			width: 100%
+	.recent-posts-single
+		h3
+			color: $dark-gray
+			text-align: left
+			margin: 5% 0
+		.card
+			&:hover > .image-container > .image-overlay
+				opacity: .6
+			.image-container
+				height: 100%
+				width: 100%
+				position: relative	
+				img
+					width: 100%
+			.card-block
+				background: $dark-blue
+				padding: 2% 7%
+				.card-text
+					color: #fff
+				.card-date
+					color: $yellow
+					font-size: 12px
+	.mobile-recent
+		.recent-posts-single
+			h3
+				text-align: center
+			.card
+				width: 80%
+				margin: 0 auto 8% auto

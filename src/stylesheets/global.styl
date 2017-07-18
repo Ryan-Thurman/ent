@@ -1,0 +1,229 @@
+@import "../stylesheets/_mixins.styl"
+@import "../stylesheets/_vars.styl"
+
+
+@font-face
+	font-family 'Nudista'
+	src url(../fonts/Nudista.eot),
+	url('../fonts/Nudista.eot?#iefix') format('embedded-opentype'),
+	url(../fonts/Nudista.tff) format('truetype'),
+	url(../fonts/Nudista.woff) format('woff')
+@font-face
+	font-family 'Nudista-semi-bold'
+	src url(../fonts/N1.eot),
+	url('../fonts/N1.eot?#iefix') format('embedded-opentype'),
+	url(../fonts/N1.tff) format('truetype'),
+	url(../fonts/N1.woff) format('woff')
+@font-face
+	font-family 'Nudista-bold'
+	src url(../fonts/N2.eot),
+	url('../fonts/N2.eot?#iefix') format('embedded-opentype'),
+	url(../fonts/N2.tff) format("truetype"),
+	url(../fonts/N2.woff) format('woff')
+
+.c_icon
+	height: 1.75em
+	width: 1.75em
+	display: inline-block
+	&.action
+		background: embedurl('../icons/ACTION.svg', 'utf8')
+		background-repeat: no-repeat
+	&.adaptation
+		background: embedurl('../icons/Adaptation.svg', 'utf8')
+		background-repeat: no-repeat
+	&.adventure
+		background: embedurl('../icons/ADVENTURE.svg', 'utf8')
+		background-repeat: no-repeat
+	&.allages
+		background: embedurl('../icons/ALLAGES.svg', 'utf8')
+		background-repeat: no-repeat
+	&.althistory
+		background: embedurl('../icons/ALTHISTORY.svg', 'utf8')
+		background-repeat: no-repeat
+	&.comedy
+		background: embedurl('../icons/COMEDY.svg', 'utf8')
+		background-repeat: no-repeat
+	&.comingofage
+		background: embedurl('../icons/COMINGOFAGE.svg', 'utf8')
+		background-repeat: no-repeat
+	&.conspiracy
+		background: embedurl('../icons/CONSPIRACY.svg', 'utf8')
+		background-repeat: no-repeat
+	&.crime
+		background: embedurl('../icons/CRIME.svg', 'utf8')
+		background-repeat: no-repeat
+	&.drama
+		background: embedurl('../icons/DRAMA.svg', 'utf8')
+		background-repeat: no-repeat
+	&.factual
+		background: embedurl('../icons/FACTUAL.svg', 'utf8')
+		background-repeat: no-repeat
+	&.fantasy
+		background: embedurl('../icons/FANTASY.svg', 'utf8')
+		background-repeat: no-repeat
+	&.horror
+		background: embedurl('../icons/HORROR.svg', 'utf8')
+		background-repeat: no-repeat
+	&.kids
+		background: embedurl('../icons/KIDS.svg', 'utf8')
+		background-repeat: no-repeat
+	&.military
+		background: embedurl('../icons/MILITARY.svg', 'utf8')
+		background-repeat: no-repeat
+	&.monster
+		background: embedurl('../icons/MONSTER.svg', 'utf8')
+		background-repeat: no-repeat
+	&.mystery
+		background: embedurl('../icons/MYSTERY.svg', 'utf8')
+		background-repeat: no-repeat
+	&.noir
+		background: embedurl('../icons/NOIR.svg', 'utf8')
+		background-repeat: no-repeat
+	&.period
+		background: embedurl('../icons/PERIOD.svg', 'utf8')
+		background-repeat: no-repeat
+	&.political
+		background: embedurl('../icons/POLITICAL.svg', 'utf8')
+		background-repeat: no-repeat
+	&.romance
+		background: embedurl('../icons/ROMANCE.svg', 'utf8')
+		background-repeat: no-repeat
+	&.satire
+		background: embedurl('../icons/SATIRE.svg', 'utf8')
+		background-repeat: no-repeat
+	&.scifi
+		background: embedurl('../icons/SCIFI.svg', 'utf8')
+		background-repeat: no-repeat
+	&.superhero
+		background: embedurl('../icons/SUPERHERO.svg', 'utf8')
+		background-repeat: no-repeat
+	&.supernatural
+		background: embedurl('../icons/SUPERNATURAL.svg', 'utf8')
+		background-repeat: no-repeat
+	&.thriller
+		background: embedurl('../icons/THRILLER.svg', 'utf8')
+		background-repeat: no-repeat
+	&.timetravel
+		background: embedurl('../icons/TIMETRAVEL.svg', 'utf8')
+		background-repeat: no-repeat
+	&.western
+		background: embedurl('../icons/WESTERN.svg', 'utf8')
+		background-repeat: no-repeat
+	&.ya
+		background: embedurl('../icons/YA.svg', 'utf8')
+		background-repeat: no-repeat
+	&.zombie
+		background: embedurl('../icons/ZOMBIE.svg', 'utf8')
+		background-repeat: no-repeat
+
+.video-icon
+	height: 4em
+	width: 10em
+	&.amazon
+		background: url('../images/amazon2.png')
+		background-repeat: no-repeat
+		background-size: contain
+		background-color: black
+	&.google
+		background: url('../images/google.png')
+		background-repeat: no-repeat
+		background-size: contain
+	&.itunes
+		background: url('../images/itunes.svg')
+		background-repeat: no-repeat
+		background-size: contain
+
+.connect-icon
+	min-height: 1em
+	min-width: 1em
+	&.website
+		background: url('../icons/global-www.svg')
+		background-size: contain
+		background-repeat: no-repeat
+	&.facebook
+		background: url('../icons/Facebook-article.svg')
+		background-size: contain
+		background-repeat: no-repeat
+	&.twitter
+		background: url('../icons/Twitter-article.svg')
+		background-size: contain
+		background-repeat: no-repeat
+	&.instagram
+		background: url('../icons/instagram-article.svg')
+		background-size: contain
+		background-repeat: no-repeat
+
+body
+	font-family: "Source Sans Pro", sans-serif
+	p,span 
+		font-size: 16px
+	h1,h2,h3,h4,h5
+		font-family: "Nudista-bold", "Source Sans Pro", sans-serif
+		color: $dark-gray
+	h6
+		font-family: "Nudaisata", "Source Sans Pro", sans-serif
+	.btn
+		font-family: "Nudista-semi-bold", "Source Sans Pro", sans-serif
+		font-size: 12px
+		padding: 0
+		width: 11.5em
+		height 2em
+		border-radius: 2px
+		line-height: 2.1
+		border: none
+		color: #fff
+		&.btn-db
+			background-color: $dark-blue
+			&:hover
+				background-color: #fff
+				color: $dark-blue
+				border 1px solid $dark-blue
+		&.btn-yellow
+			background-color: $yellow
+			color: $dark-blue
+			&:hover
+				background-color: #fff
+				color: $dark-blue
+				border 1px solid $dark-blue
+		&.btn-lb
+			background-color: $light-blue
+			&:hover
+				background-color: #fff
+				color: $dark-blue
+				border 1px solid $dark-blue
+	.image-overlay
+		position: absolute
+		height: 100%
+		width: 100%
+		top: 0
+		background: $yellow
+		opacity: 0
+	.center
+		text-align: center
+	.card
+		width: 90%
+		margin: 2% auto
+		img
+			max-height: 15em
+			width: 100%
+		.card-block
+			background-color: $dark-blue
+			color: #fff
+			min-height: 2em
+	.addtoany_share_save_container
+		a
+			margin: 3% 5% 0 0
+			span.a2a_svg
+				height: 35px !important
+				width: 35px !important
+	.connect
+		a
+			font-size: 14px
+			-webkit-transition: font-size 0.3s ease-in-out
+			-moz-transition: font-size 0.3s ease-in-out
+			-o-transition: font-size 0.3s ease-in-out
+			transition: font-size 0.3s ease-in-out
+			&:hover
+				font-size: 16px
+.no-padding
+	padding: 0

@@ -1,0 +1,41 @@
+<div class="sidebar-top">
+	<div class="row">
+		<div class="col-xs-12 more-about">
+			<h5>MORE ABOUT</h5>
+			<p>{{post.get_field('more_about')}}</p>
+			<div class="divider"></div>
+		</div>
+		<div class="col-xs-12 watch-online">
+			<h5>WATCH ONLINE</h5>
+			<a href={{post.get_field( 'itunes')}}>
+				<div class="video-icon itunes"></div>
+			</a>
+			<a href={{post.get_field( 'google_link')}}>
+				<div class="video-icon google"></div>
+			</a>
+			<a href={{post.get_field( 'amazon_link')}}>
+				<div class="video-icon amazon"></div>
+			</a>
+			<div class="divider"></div>
+		</div>
+		<div class="col-xs-12 connect">
+			<h5>CONNECT</h5>
+			<a class="connect-links-sidebar" href={{post.get_field( 'official_site')}}>
+				<div class="connect-icon website"></div>
+				OFFICIAL SITE
+			</a>
+			<a class="connect-links-sidebar" href={{post.get_field( 'facebook_link')}}>
+			<div class="connect-icon facebook"></div>
+				FACEBOOK
+			</a>
+			<a class="connect-links-sidebar" href={{post.get_field( 'twitter_link')}}>
+			<div class="connect-icon twitter"></div>
+				TWITTER
+			</a>
+			<a class="connect-links-sidebar" href={{post.get_field( 'instagram_link')}}>
+			<div class="connect-icon instagram"></div>
+				INSTAGRAM
+			</a>
+		</div>
+	</div>
+</div>

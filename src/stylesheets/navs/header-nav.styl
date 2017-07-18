@@ -1,0 +1,94 @@
+@import "../../stylesheets/_vars.styl"
+
+#header-nav
+	min-height: 5em
+	background: $dark-blue
+	border: none
+	border-radius: 0px
+	position: relative
+	margin-bottom: 0
+	.navbar-header
+		.navbar-brand
+			height: 3em
+			padding: 6px 1.3em 0 1.3em
+			.brand-image-container
+				height: 3em
+				width: 4em
+				img
+					height: 100%
+					width: 100%
+	.main-section
+		border-color: $dark-blue
+		.nav.navbar-nav
+			.divider
+				height: 1em
+				width: 2px
+				background-color: $yellow
+				margin: 7% 0 0 0 
+			.active
+				a
+					color: $yellow
+			a
+				color: white
+				background: transparent
+				line-height: 2.5
+				&:hover
+					color: $yellow
+		.nav.navbar-nav.navbar-right
+			.nav-non-link
+				position: relative
+				display: block
+				padding: 10px 15px
+				color: #fff
+				line-height: 3
+				font-size: 14px
+			.divider
+				height: 2em
+				width: 2px
+				background-color: $yellow
+				margin: 7% 0 0 0
+			i
+				font-size: 15px
+				color: $light-blue
+			.glyphicon
+				line-height: 2
+				&.glyphicon-remove
+					position: absolute
+					top: 17%
+					right: 25%
+					font-size: 20px
+				&.no-show
+					opacity: 0 
+					z-index: 0
+				&.show
+					opacity: 1 
+					z-index: 100
+	
+	#nav-search
+		background-color: $light-blue
+		position: absolute
+		top: 70px
+		z-index: 100
+		left: 0px
+		width: 100%
+		opacity: 0
+		-webkit-transition: opacity 0.3s ease-in-out
+		-moz-transition: opacity 0.3s ease-in-out
+		-o-transition: opacity 0.3s ease-in-out
+		transition: opacity 0.3s ease-in-out
+		&.show-nav
+			opacity: 1
+		&.no-show-nav
+			opacity: 0
+		.form-control
+			border-top: none
+			border-left: none
+			border-right: none
+			border-bottom: 1px solid $dark-grey
+			border-radius: 0
+			box-shadow: none
+			--webkit-boxshadow: none
+			background: none
+			color: white
+			&:focus
+				border-bottom: 1px solid $yellow

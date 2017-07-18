@@ -1,0 +1,104 @@
+{% extends "base.twig" %} {% block content %}
+<div class="container-fluid no-padding">
+	<div class="row">
+		<div class="col-xs-12 topImage">
+			<img src="http://via.placeholder.com/1000x300" alt="">
+		</div>
+		<!-- end topimage -->
+	</div>
+	<!-- end row -->
+</div>
+<div class="container" id="project-content-section">
+	<div class="row">
+		<div class="col-xs-12 project-top">
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+					<h4>ACTIVE PROJECTS</h4>
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<div class="category-info">
+						<div class="row">
+							<div class="col-xs-12 col-md-8">
+								<div class="project-categories">
+									{% for cat in post.categories %}
+									<div>
+										<p>{{cat|upper}}</p>
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="project-categories-icons">
+									{% for cat in post.categories %}
+									<div class="c_icon {{cat}}"></div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<h2>{{post.title}}</h2>
+		</div>
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="col-xs-12 col-md-7">
+					<h5>SYNOPSIS</h5>
+					<p>{{post.content}}</p>
+				</div>
+				<div class="col-xs-12 col-md-5">
+					<div class="row project-side">
+						<div class="col-xs-12">
+							<h5>CREDITS</h5>
+						</div>
+						<div class="col-xs-12 more-info-section">
+							<div class="row">
+								<div class="col-xs-12">
+									<h5>CAST & CREW</h5>
+									<div class="cast">
+										{{post.get_field('cast')}}
+									</div>
+									<div class="divider"></div>
+								</div>
+								<div class="col-xs-12 connect">
+									<h5>CONNECT</h5>
+									<a class="connect-links-sidebar" href={{post.get_field( 'official_site')}}>
+										<div class="connect-icon website"></div>
+										OFFICIAL SITE
+									</a>
+									<a class="connect-links-sidebar" href={{post.get_field( 'facebook_link')}}>
+										<div class="connect-icon facebook"></div>
+										FACEBOOK
+									</a>
+									<a class="connect-links-sidebar" href={{post.get_field( 'twitter_link')}}>
+										<div class="connect-icon twitter"></div>
+										TWITTER
+									</a>
+									<a class="connect-links-sidebar" href={{post.get_field( 'instagram_link')}}>
+										<div class="connect-icon instagram"></div>
+										INSTAGRAM
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="container-fluid no-padding">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="project-back-button">
+				<div>
+					<a href="/active-projects">Back To Active Projects</a>
+					<span class="glyphicon glyphicon-arrow-right"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endblock %}

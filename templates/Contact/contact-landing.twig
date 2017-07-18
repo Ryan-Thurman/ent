@@ -1,0 +1,42 @@
+{% extends "base.twig" %} {% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-md-7">
+			<div class="image-container">
+				<img>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-5 more-info-section">
+			<div class="row">
+				<div class="col-xs-12">
+					<h5>CAST & CREW</h5>
+					<div class="cast">
+						{{post.get_field('cast')}}
+					</div>
+					<div class="divider"></div>
+				</div>
+				<div class="col-xs-12 connect">
+					<h5>CONNECT</h5>
+					<a class="connect-links-sidebar" href={{post.get_field( 'official_site')}}>
+						<div class="connect-icon website"></div>
+						OFFICIAL SITE
+					</a>
+					<a class="connect-links-sidebar" href={{post.get_field( 'facebook_link')}}>
+						<div class="connect-icon facebook"></div>
+						FACEBOOK
+					</a>
+					<a class="connect-links-sidebar" href={{post.get_field( 'twitter_link')}}>
+						<div class="connect-icon twitter"></div>
+						TWITTER
+					</a>
+					<a class="connect-links-sidebar" href={{post.get_field( 'instagram_link')}}>
+						<div class="connect-icon instagram"></div>
+						INSTAGRAM
+					</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+{% include 'contact-form.twig' %} {% endblock %}
