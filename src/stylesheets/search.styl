@@ -1,0 +1,56 @@
+@import "../stylesheets/_vars.styl"
+
+#search-form
+	margin: 4% auto
+	h1
+		color: $dark-blue
+	.search-posts
+		h3
+			color: $light-blue
+			margin: 4% 0 2% 0
+		a
+			text-decoration: none
+			.card
+				&:hover > .image-container > .image-overlay
+					opacity: .6
+				.image-container
+					height: 100%
+					width: 100%
+					position: relative	
+					img
+						width: 100%
+				.card-block
+					background: $dark-blue
+					padding: 2% 7%
+					.card-text
+						color: #fff
+					.card-date
+						color: $yellow
+						font-size: 12px
+	.search-projects
+		margin: 1% auto
+		h3
+			color: $light-blue
+			margin: 4% 0 2% 0
+		a
+			text-decoration: none
+			.card
+				&:hover > .image-container > .image-overlay
+					opacity: .6
+				.image-container
+					height: 100%
+					width: 100%
+					position: relative	
+					img
+						width: 100%
+				.card-block
+					padding: 5%
+					.card-title
+						font-family: "Nudista-semi-bold"
+						font-size: 18px
+						margin-bottom: 2%
+					.project-categories
+						margin-bottom: 2%
+						span
+							color: $yellow
+							font-size: 12px

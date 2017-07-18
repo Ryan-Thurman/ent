@@ -3,6 +3,17 @@
 #carousel-container
 	padding: 0
 	.swiper-container
+		a
+			text-decoration: none
+		.swiper-slide
+			&:hover > .carousel-caption
+				color: #fff
+			.carousel-caption
+				p
+					color: #fff
+				a
+					@media (max-width: 600px)
+						display: none
 		.image-container
 			height: 100%
 			img

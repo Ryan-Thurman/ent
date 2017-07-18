@@ -1,19 +1,21 @@
 @import "../../stylesheets/_vars.styl"
 
-#header-nav
-	min-height: 5em
+#header-nav-desktop
+	min-height: 6em
 	background: $dark-blue
-	border: none
+	border: 0
 	border-radius: 0px
 	position: relative
 	margin-bottom: 0
+	@media (max-width:850px)
+		display: none
 	.navbar-header
 		.navbar-brand
 			height: 3em
 			padding: 6px 1.3em 0 1.3em
 			.brand-image-container
-				height: 3em
-				width: 4em
+				height: 3.5em
+				width: 5em
 				img
 					height: 100%
 					width: 100%
@@ -92,3 +94,138 @@
 			color: white
 			&:focus
 				border-bottom: 1px solid $yellow
+#header-nav-mobile
+	height: 4em
+	background: $dark-blue
+	border: 0
+	border-radius: 0px
+	position: relative
+	margin-bottom: 0
+	@media (min-width:850px)
+		display: none
+	@media (max-width: 849px)
+		.navbar-collapse.collapse
+			display: none !important
+		.navbar-collapse.collapse.in
+			display: block !important
+		.navbar-header .collapse, .navbar-toggle
+			display:block !important
+		.navbar-header
+			float:none
+		.navbar-nav
+			float: none!important
+			margin: 7.5px -15px
+		.navbar-nav>li
+			float: none
+		.navbar-nav>li>a
+			padding-top: 10px
+			padding-bottom: 10px
+	.navbar-brand
+		float: none
+		padding: 3%
+		height: 3em
+		.brand-image-container
+			height: 100%
+			width: 5em
+			margin: 0 auto
+			img
+				height: 100%
+				width: 100%
+	.main-section
+		background-color: $light-blue
+		width: 100%
+		p
+			color: #fff
+			font-size: 12px
+			text-align: center
+		.nav.navbar-nav
+			.divider
+				height: 2px
+				width: 90%
+				background-color: $yellow
+				margin: 2% auto 
+			.active
+				a
+					color: $yellow
+			a
+				color: white
+				text-decoration: none
+				line-height: 2.5
+				&:hover
+					color: $yellow
+			.inner-list
+				list-style-type: none
+				padding-left: 5%
+				i
+					font-size: 24px
+					margin-right: 4%
+	.search-box
+		color: #fff
+		width: 90%
+		.glyphicon
+			line-height: 2
+			float: right
+			font-size: 25px
+			&.glyphicon-remove
+				position: absolute
+				right: 25px
+				top: -3px
+				font-size: 30px
+			&.no-show
+				opacity: 0 
+				z-index: 0
+			&.show
+				opacity: 1 
+				z-index: 100
+
+	#nav-search-mobile
+		background-color: $light-blue
+		position: absolute
+		top: 55px
+		z-index: -1
+		left: 0px
+		width: 100%
+		opacity: 0
+		-webkit-transition: opacity 0.3s ease-in-out
+		-moz-transition: opacity 0.3s ease-in-out
+		-o-transition: opacity 0.3s ease-in-out
+		transition: opacity 0.3s ease-in-out
+		&.show-nav
+			opacity: 1
+			z-index: 100
+		&.no-show-nav
+			opacity: 0
+		.form-control
+			border-top: none
+			border-left: none
+			border-right: none
+			border-bottom: 1px solid $dark-grey
+			border-radius: 0
+			box-shadow: none
+			--webkit-boxshadow: none
+			background: none
+			color: white
+			&:focus
+				border-bottom: 1px solid $yellow
+	
+.navbar-toggle
+	float: none
+	.icon-bar
+		width: 28px
+		background: #fff
+		transition: .5s ease
+		&:nth-child(2)
+			transform: rotate(-45deg)translateY(5px)translateX(-5px)
+		&:nth-child(3)
+			opacity: 0
+		&:nth-child(4)
+			transform:rotate(45deg)translateY(-4px)translateX(-3px)
+
+.navbar-toggle.collapsed 
+	.icon-bar
+		&:nth-child(2)
+			transform: rotate(0)translateY(0)translateX(0)
+		&:nth-child(3)
+			opacity:1
+		&:nth-child(4)
+			transform:rotate(0)translateY(0)translateX(0)

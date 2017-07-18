@@ -9,17 +9,19 @@
 		<div class="swiper-wrapper">
 			<!-- Slides -->
 			{% for slider in sliders %}
-			<div class="swiper-slide">
-				<div class="image-container">
-					<img src="http://via.placeholder.com/1000x350'" alt="">
-				</div>
-				<div class="carousel-caption">
-					<p> {{slider.title}} </p>
-					<div>
-						<a href="{{slider.get_field('learn_more')}}" class='btn btn-lb'> LEARN MORE </a>
+			<a href='{{slider.get_field("learn_more")}}' target='_blank'>
+				<div class="swiper-slide">
+					<div class="image-container">
+						<img src="http://via.placeholder.com/1000x350'" alt="">
+					</div>
+					<div class="carousel-caption">
+						<p> {{slider.title}} </p>
+						<div>
+							<a href="{{slider.get_field('learn_more')}}" class='btn btn-lb'> LEARN MORE </a>
+						</div>
 					</div>
 				</div>
-			</div>
+			</a>
 			{% endfor %}
 		</div>
 		<!-- If we need pagination -->

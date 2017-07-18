@@ -1,8 +1,10 @@
-<script>require('javascript/search.js')</script>
+<script>
+	require('javascript/search.js')
+</script>
 
-<nav class="navbar navbar-default" id='header-nav'>
+<nav class="navbar" id='header-nav-desktop'>
 	<div class="container-fluid">
-		
+
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#home-nav" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -12,12 +14,12 @@
       </button>
 			<a class="navbar-brand" href="/">
 				<div class="brand-image-container">
-					<img src="http://via.placeholder.com/100x100" alt="">
+					<img src="{{site.theme.path}}/dist/logos/entertainment.png" alt="">
 				</div>
 			</a>
 		</div>
 
-		
+
 		<div class="collapse navbar-collapse main-section" id="home-nav">
 			<ul class="nav navbar-nav">
 				<li>
@@ -40,8 +42,8 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li>
 					<a>
-						<span class="glyphicon glyphicon-search show"></span>
-						<span class="glyphicon glyphicon-remove no-show"></span>
+						<span class="glyphicon glyphicon-search show desktop-search"></span>
+						<span class="glyphicon glyphicon-remove no-show desktop-remove"></span>
 					</a>
 				</li>
 				<li class="divider"></li>
@@ -65,18 +67,123 @@
 	<!-- /.container-fluid -->
 	<div class="container-fluid " id="nav-search">
 		<div class="container">
-			<div class="row" style="padding: 0 5%;">
+			<div class="row">
 
 				<form role="search" method="get" class="" action="{{site.link}}">
-				<div class="col-xs-9">
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Search IDW Entertainment" value="" name="s"  />
+					<div class="col-xs-9">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search IDW Entertainment" value='' name="s" />
+						</div>
+					</div>
+					<div class="col-xs-2" style="line-height: 3;">
+						<button type="submit" class="btn btn-yellow" value="Search">SEARCH</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<nav class="navbar" id='header-nav-mobile'>
+	<div class="container-fluid no-padding">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="navbar-header">
+					<div class="row">
+						<div class="col-xs-4">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobile-nav" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<!-- end button -->
+						<div class="col-xs-4">
+							<div class="navbar-brand">
+								<div class="brand-image-container">
+									<a href="/">
+									<img src="{{site.theme.path}}/dist/logos/entertainment.png" alt="">
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<div class="search-box">
+								<span class="glyphicon glyphicon-search show mobile-search"></span>
+								<span class="glyphicon glyphicon-remove no-show mobile-remove"></span>
+							</div>
+						</div>
+					</div>
+					<!-- end navbar row -->
+
+
 				</div>
-					
+				<!-- end navbar-header -->
+			</div>
+			<div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="collapse navbar-collapse main-section" id="mobile-nav">
+					<ul class="nav navbar-nav">
+						<li>
+							<ul class="inner-list">
+								<li> <a href="/about">ABOUT</a> </li>
+								<li> <a href="/news-landing">NEWS</a> </li>
+								<li> <a href="/active-projects">ACTIVE PROJECTS</a> </li>
+								<li> <a href="/contact">CONTACT</a> </li>
+							</ul>
+						</li>
+						<li class="divider"></li>
+						<li>
+							<ul class="inner-list">
+								<li> <a href="http://idwpublishing.com">IDW PUBLISHING</a> </li>
+								<li> <a href="http://idwgames.com/">IDW GAMES</a> </li>
+								<li> <a href="http://idwlimited.com/">IDW LIMITED</a> </li>
+								<li> <a href="http://www.topshelfcomix.com/"> TOP SHELF</a> </li>
+								<li> <a href="http://sdcomicartgallery.com/"> SD COMIC ART GALLERY </a> </li>
+							</ul>
+						</li>
+						<li class="divider"></li>
+						<li>
+							<ul class="inner-list">
+								<li> <a href="#">PRIVACY POLICY</a> </li>
+								<li> <a href="#">TERMS & CONDITIONS</a></li>
+							</ul>
+						</li>
+						<li class="divider"></li>
+						<li>
+							<ul class="inner-list">
+								<li> <a href="#">FOLLOW</a> </li>
+								<li> 
+									<a href=""> <i class="fa fa-facebook"> </i> </a>
+									<a href=""> <i class="fa fa-twitter"> </i> </a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<p>Copyright @2017 IDW Entertainment. All Rights Reserved.</p>
 				</div>
-				<div class="col-xs-2" style="line-height: 3;">
-					<button type="submit" class="btn btn-yellow" value="Search">SEARCH</button>
-				</div>
+			</div>
+		</div>
+
+
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container-fluid -->
+	<div class="container-fluid no-padding " id="nav-search-mobile">
+		<div class="container">
+			<div class="row">
+
+				<form role="search" method="get" class="" action="{{site.link}}">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search IDW Entertainment" value='' name="s" />
+							<input type="submit" value="Search" style="display: none" />
+						</div>
+					</div>
 				</form>
 
 			</div>

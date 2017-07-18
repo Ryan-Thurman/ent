@@ -66,3 +66,22 @@ class StarterSite extends TimberSite {
 }
 
 new StarterSite();
+
+
+function custom_search( $query ) {
+    if ( is_search() && $query->is_main_query() && $query->get( 's' ) ) {
+        $query->set(
+            'post_type', array('post', 'projects'),
+            'meta_query', array(
+                array(
+                'key' => 'wysiwyg',
+                'value' => '%s',
+                'compare' => 'LIKE',
+                ),
+            )
+        );
+        return $query;
+    }
+}
+ 
+add_action( 'pre_get_posts', 'custom_search' );

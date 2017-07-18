@@ -11,7 +11,22 @@
 
 $context = Timber::get_context();
 
-$context['title'] = 'Search results for '. get_search_query();
-$context['posts'] = Timber::get_posts();
+$context['title'] = 'Showing results for '.'"'.get_search_query().'"' ;
+
+$posts = Timber::get_posts();
+
+$article_posts = array();
+$project_posts = array();
+
+foreach($posts as $post) {
+	if($post->post_type === 'post') {
+		array_push($article_posts, $post);
+	} else if ($post->post_type === 'projects') {
+		array_push($project_posts, $post);
+	};
+}
+
+$context['posts'] = $article_posts;
+$context['projects'] = $project_posts;
 
 Timber::render( 'search.twig', $context );

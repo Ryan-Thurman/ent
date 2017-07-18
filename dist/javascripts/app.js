@@ -10600,20 +10600,37 @@ process.umask = function() { return 0; };
 require.register("javascript/search.js", function(exports, require, module) {
 $(document).ready(function(){
 	
-	$(".glyphicon-search").on("click", function () {
+	$(".desktop-search").on("click", function () {
 		$(this).removeClass('show').addClass('no-show');
-		$(".glyphicon-remove").removeClass('no-show').addClass('show')
+		$(".desktop-remove").removeClass('no-show').addClass('show')
 
 		$('#nav-search').addClass('show-nav').removeClass('no-show-nav')
 	})
 
-	$(".glyphicon-remove").on('click',function () {
+	$(".desktop-remove").on('click',function () {
 		$(this).removeClass('show').addClass('no-show');
-		$(".glyphicon-search").removeClass('no-show').addClass('show')
+		$(".desktop-search").removeClass('no-show').addClass('show')
 
 		$('#nav-search').addClass('no-show-nav').removeClass('show-nav')
 		
 	})
+
+	$(".mobile-remove").on('click',function () {
+		$(this).removeClass('show').addClass('no-show');
+		$(".mobile-search").removeClass('no-show').addClass('show')
+
+		$('#nav-search-mobile').addClass('no-show-nav').removeClass('show-nav')
+		
+	})
+
+	$(".mobile-search").on('click',function () {
+		$(this).removeClass('show').addClass('no-show');
+		$(".mobile-remove").removeClass('no-show').addClass('show')
+
+		$('#nav-search-mobile').addClass('show-nav').removeClass('no-show-nav')
+		
+	})
+
 })
 });
 

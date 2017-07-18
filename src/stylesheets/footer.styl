@@ -1,15 +1,42 @@
 @import "../stylesheets/_vars.styl"
 
 #footer-top
-	padding: 5% 0
+	padding: 2% 0
 	.col-xs-4
 		margin: 2% auto
+		.footer-logo-container
+			img
+				width: 100%
 #footer-bottom
+	@media (max-width: 840px)
+		display: none
 	background-color: $dark-blue
 	color: #fff
 	height: 15em
 	padding: 5% 5% 10% 5%
+	.main-section
+		border-color: $dark-blue
+		.nav.navbar-nav
+			.divider
+				height: 1em
+				width: 2px
+				background-color: $yellow
+				margin: 16% 0 0 0 
+			.active
+				a
+					color: $yellow
+			a
+				color: white
+				background: transparent
+				line-height: 5.5
+				&:hover
+					color: $yellow
+	.footer-image-container
+		width: 6em
+		img
+			width: 100%
 	.navbar-right
 		p
 			font-size: 10px
 			opacity: .8
+			padding: 4% 0
