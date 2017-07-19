@@ -9,6 +9,8 @@ $context = Timber::get_context();
 $newsArgs = array(
 	'post_type' => 'post',
 	'posts_per_page' => 25
+	'meta_key'		=> 'featured',
+	'meta_value'	=> false
 );
 
 $featuredArgs = array(
