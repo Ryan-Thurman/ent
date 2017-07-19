@@ -10,14 +10,14 @@ $newsArgs = array(
 	'post_type' => 'post',
 	'posts_per_page' => 25,
 	'meta_key'		=> 'featured',
-	'meta_value'	=> false
+	'meta_value'	=> 0
 );
 
 $featuredArgs = array(
 	'numberposts'	=> 1,
 	'post_type'		=> 'post',
 	'meta_key'		=> 'featured',
-	'meta_value'	=> true
+	'meta_value'	=> 1
 );
 
 $context['posts'] = Timber::get_posts($newsArgs);
