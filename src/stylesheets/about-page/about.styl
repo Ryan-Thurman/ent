@@ -18,27 +18,35 @@ h3
 	h3
 		margin: 3% auto
 	.card
-		margin: 0 auto
+		margin: 2% auto
+		width: 200px
 		&:hover > .image-container > .image-overlay
-			opacity: .6
-		&:hover > .image-container > .bio-click
-				opacity: 1
+			opacity: .7
+		&:hover > .image-container > .image-overlay > .text-holder > .bio-click
+			opacity: 1
 		.image-container
 			height: 100%
 			width: 100%
 			position: relative	
 			img
 				width: 100%
-			.bio-click
-				font-family: "Nudista-bold", sans-serif
-				position: absolute
-				top: 45%
-				left: 20%
-				right: 15%
-				font-size: 24px
-				color: #fff
-				opacity: 0
-				width: 100%
+			.image-overlay
+				.text-holder
+					margin: 0 auto
+					height: 5em
+					position: relative
+					top: 50%
+					transform: perspective(1px) translateY(-50%)
+					text-align: center
+					.bio-click
+						font-family: "Nudista-bold", sans-serif
+						font-size: 24px
+						color: #fff
+						opacity: 0
+						width: 100%
+						position: relative
+						top: 50%
+						transform: perspective(1px) translateY(-50%)
 		.card-block
 			background-color: $dark-blue
 			color: #fff

@@ -23,12 +23,13 @@ h3 {
   margin: 3% auto;
 }
 #our-team .card {
-  margin: 0 auto;
+  margin: 2% auto;
+  width: 200px;
 }
 #our-team .card:hover > .image-container > .image-overlay {
-  opacity: 0.6;
+  opacity: 0.7;
 }
-#our-team .card:hover > .image-container > .bio-click {
+#our-team .card:hover > .image-container > .image-overlay > .text-holder > .bio-click {
   opacity: 1;
 }
 #our-team .card .image-container {
@@ -39,16 +40,23 @@ h3 {
 #our-team .card .image-container img {
   width: 100%;
 }
-#our-team .card .image-container .bio-click {
+#our-team .card .image-container .image-overlay .text-holder {
+  margin: 0 auto;
+  height: 5em;
+  position: relative;
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
+  text-align: center;
+}
+#our-team .card .image-container .image-overlay .text-holder .bio-click {
   font-family: "Nudista-bold", sans-serif;
-  position: absolute;
-  top: 45%;
-  left: 20%;
-  right: 15%;
   font-size: 24px;
   color: #fff;
   opacity: 0;
   width: 100%;
+  position: relative;
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
 }
 #our-team .card .card-block {
   background-color: #2e373c;
@@ -104,7 +112,6 @@ h3 {
 }
 #bio-page .bio-summary-section .image-container {
   height: 90%;
-  width: 80%;
   margin: 0 auto;
 }
 #bio-page .bio-summary-section .image-container img {
@@ -306,47 +313,77 @@ h3 {
 #footer-top .col-xs-4 .footer-logo-container img {
   width: 100%;
 }
-#footer-bottom {
+#footer-bottom-desktop {
   background-color: #2e373c;
   color: #fff;
   height: 15em;
   padding: 5% 5% 10% 5%;
 }
 @media (max-width: 840px) {
-  #footer-bottom {
+  #footer-bottom-desktop {
     display: none;
   }
 }
-#footer-bottom .main-section {
+#footer-bottom-desktop .main-section {
   border-color: #2e373c;
 }
-#footer-bottom .main-section .nav.navbar-nav .divider {
+#footer-bottom-desktop .main-section .nav.navbar-nav .divider {
   height: 1em;
   width: 2px;
   background-color: #ffc600;
   margin: 16% 0 0 0;
 }
-#footer-bottom .main-section .nav.navbar-nav .active a {
+#footer-bottom-desktop .main-section .nav.navbar-nav .active a {
   color: #ffc600;
 }
-#footer-bottom .main-section .nav.navbar-nav a {
+#footer-bottom-desktop .main-section .nav.navbar-nav a {
   color: #fff;
   background: transparent;
   line-height: 5.5;
 }
-#footer-bottom .main-section .nav.navbar-nav a:hover {
+#footer-bottom-desktop .main-section .nav.navbar-nav a:hover {
   color: #ffc600;
 }
-#footer-bottom .footer-image-container {
+#footer-bottom-desktop .footer-image-container {
   width: 6em;
 }
-#footer-bottom .footer-image-container img {
+#footer-bottom-desktop .footer-image-container img {
   width: 100%;
 }
-#footer-bottom .navbar-right p {
+#footer-bottom-desktop .navbar-right p {
   font-size: 10px;
   opacity: 0.8;
   padding: 4% 0;
+}
+#footer-bottom-mobile {
+  background-color: #2e373c;
+  color: #fff;
+  padding: 5% 5% 10% 5%;
+}
+@media (min-width: 840px) {
+  #footer-bottom-mobile {
+    display: none;
+  }
+}
+#footer-bottom-mobile .footer-image-container {
+  width: 10em;
+  margin: 0 auto 4% auto;
+}
+#footer-bottom-mobile .footer-image-container img {
+  width: 100%;
+}
+#footer-bottom-mobile .footer-follow-icons {
+  text-align: center;
+  margin: 2% auto 1% auto;
+}
+#footer-bottom-mobile .footer-follow-icons i {
+  font-size: 36px;
+  margin: 1% 3%;
+}
+#footer-bottom-mobile p {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 2%;
 }
 
 @font-face {
@@ -723,6 +760,8 @@ body .connect a:hover {
 .news-section .inner .col-xs-12 .card .card-block {
   background: #2e373c;
   padding: 2% 7%;
+  min-height: 12em;
+  max-height: 14em;
 }
 .news-section .inner .col-xs-12 .card .card-block .card-text {
   color: #fff;
@@ -753,7 +792,7 @@ body .connect a:hover {
   height: 100%;
 }
 #carousel-container .swiper-container .image-container img {
-  height: 100%;
+  max-height: 45em;
   width: 100%;
 }
 #carousel-container .swiper-container .swiper-pagination-bullet {
@@ -847,7 +886,7 @@ body .connect a:hover {
 #header-nav-desktop #nav-search {
   background-color: #267788;
   position: absolute;
-  top: 70px;
+  top: 80px;
   z-index: 100;
   left: 0px;
   width: 100%;

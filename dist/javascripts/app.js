@@ -10760,7 +10760,7 @@ window.jQuery = require("jquery/dist/jquery.js");
 /* jshint ignore:end */
 
 ;(function(/* BrowserSync-Brunch */) {
-  var url = "//" + location.hostname + ":3334/browser-sync/browser-sync-client.2.1.6.js";
+  var url = "//" + location.hostname + ":3333/browser-sync/browser-sync-client.2.1.6.js";
   var bs = document.createElement("script");
   bs.type = "text/javascript"; bs.async = true; bs.src = url;
   var s = document.getElementsByTagName("script")[0];

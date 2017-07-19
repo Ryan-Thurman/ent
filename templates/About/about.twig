@@ -25,9 +25,12 @@
 			<a href="{{bio.link}}">
 				<div class="card">
 					<div class="image-container">
-						<img class="card-img-top" src="http://via.placeholder.com/200x200" alt="Card image cap">
-						<div class="image-overlay"></div>
-						<p class="bio-click">CLICK FOR BIO</p>
+						<img class="card-img-top" src="{{bio.get_field('bio_card_img')}}" alt="Card image cap">
+						<div class="image-overlay">
+							<div class="text-holder">
+								<p class="bio-click">CLICK FOR BIO</p>
+							</div>
+						</div>
 					</div>
 					<div class="card-block center">
 						<p class="card-text">Name</p>
@@ -45,7 +48,7 @@
 <div class="container-fluid" id="summary-content">
 	<div class="row">
 		<div class="col-xs-12">
-			<img src="http://via.placeholder.com/800x200" alt="">
+			{# <img src="http://via.placeholder.com/800x200" alt=""> #}
 		</div>
 		<div class="col-xs-12">
 			<p>{{options.article}}</p>
