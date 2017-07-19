@@ -670,6 +670,10 @@ body .connect a {
 body .connect a:hover {
   font-size: 16px;
 }
+body .card.news-card .card-block {
+  min-height: 12em;
+  max-height: 14em;
+}
 .no-padding {
   padding: 0;
 }
