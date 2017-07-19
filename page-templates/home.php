@@ -8,7 +8,7 @@ $context = Timber::get_context();
 
 $projectArgs = array(
 	'post_type' => 'projects',
-	'posts_per_page' => -1
+	'posts_per_page' => 9
 );
 
 $carouselArgs = array(
@@ -18,7 +18,7 @@ $carouselArgs = array(
 
 $newArgs = array(
 	'post_type' => 'post',
-	'posts_per_page' => -1
+	'posts_per_page' => 3
 );
 
 $context['posts'] = Timber::get_posts($newArgs);
