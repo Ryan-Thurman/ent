@@ -982,6 +982,8 @@ body .card.news-card .card-block .card-text {
 #header-nav-mobile .main-section {
   background-color: #267788;
   width: 100%;
+  position: relative;
+  z-index: 999;
 }
 #header-nav-mobile .main-section p {
   color: #fff;
