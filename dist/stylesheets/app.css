@@ -956,12 +956,12 @@ body .card.news-card .card-block .card-text {
     float: none !important;
     margin: 7.5px -15px;
     position: relative;
-    z-index: 1100;
+    z-index: 1000;
   }
   #header-nav-mobile .navbar-nav>li {
     float: none;
     position: relative;
-    z-index: 1200;
+    z-index: 1300;
   }
   #header-nav-mobile .navbar-nav>li>a {
     padding-top: 10px;
@@ -985,8 +985,9 @@ body .card.news-card .card-block .card-text {
 #header-nav-mobile #mobile-nav {
   background-color: #267788;
   width: 100%;
-  position: relative;
-  z-index: 1300;
+  position: absolute;
+  left: 0;
+  z-index: 1100;
 }
 #header-nav-mobile #mobile-nav p {
   color: #fff;
