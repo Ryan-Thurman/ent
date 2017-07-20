@@ -954,6 +954,8 @@ body .card.news-card .card-block .card-text {
   #header-nav-mobile .navbar-nav {
     float: none !important;
     margin: 7.5px -15px;
+    position: static;
+    z-index: 2000;
   }
   #header-nav-mobile .navbar-nav>li {
     float: none;
@@ -1010,6 +1012,8 @@ body .card.news-card .card-block .card-text {
 #header-nav-mobile .main-section .nav.navbar-nav .inner-list {
   list-style-type: none;
   padding-left: 5%;
+  position: static;
+  z-index: 2001;
 }
 #header-nav-mobile .main-section .nav.navbar-nav .inner-list i {
   font-size: 24px;
