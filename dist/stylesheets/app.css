@@ -641,7 +641,7 @@ body .card {
   margin: 2% auto;
 }
 body .card img {
-  max-height: 15em;
+  height: 14em;
   width: 100%;
 }
 body .card .card-block {
@@ -673,6 +673,10 @@ body .connect a:hover {
 body .card.news-card .card-block {
   min-height: 12em;
   max-height: 14em;
+}
+body .card.news-card .card-block .card-text {
+  max-height: 7em;
+  overflow: hidden;
 }
 .no-padding {
   padding: 0;
