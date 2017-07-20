@@ -101,6 +101,7 @@
 	border-radius: 0px
 	position: relative
 	margin-bottom: 0
+	z-index: 1000
 	@media (min-width:850px)
 		display: none
 	@media (max-width: 849px)
@@ -115,12 +116,12 @@
 		.navbar-nav
 			float: none!important
 			margin: 7.5px -15px
-			position: static
-			z-index: 2000
+			position: relative
+			z-index: 1100
 		.navbar-nav>li
 			float: none
-			position: static
-			z-index: 1000
+			position: relative
+			z-index: 1200
 		.navbar-nav>li>a
 			padding-top: 10px
 			padding-bottom: 10px
@@ -135,11 +136,11 @@
 			img
 				height: 100%
 				width: 100%
-	.main-section
+	#mobile-nav
 		background-color: $light-blue
 		width: 100%
 		position: relative
-		z-index: 999
+		z-index: 1300
 		p
 			color: #fff
 			font-size: 12px
@@ -162,7 +163,7 @@
 			.inner-list
 				list-style-type: none
 				padding-left: 5%
-				position: static
+				position: relative
 				z-index: 2001
 				i
 					font-size: 24px
