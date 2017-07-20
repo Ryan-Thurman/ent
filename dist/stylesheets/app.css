@@ -802,6 +802,8 @@ body .card.news-card .card-block .card-text {
 }
 #carousel-container .swiper-container .image-container img {
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 #carousel-container .swiper-container .swiper-pagination-bullet {
   background-color: #fff;
@@ -931,7 +933,7 @@ body .card.news-card .card-block .card-text {
   border-radius: 0px;
   position: relative;
   margin-bottom: 0;
-  z-index: 1000;
+  z-index: 9000;
 }
 @media (min-width: 850px) {
   #header-nav-mobile {
