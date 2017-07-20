@@ -12,7 +12,7 @@
 			<a href='{{slider.get_field("learn_more")}}' target='_blank'>
 				<div class="swiper-slide">
 					<div class="image-container">
-						<img src="{{slider.thumbnail}}|tojpg" srcset="{{ post.thumbnail.src|tojpg|resize(1920) }}, {{ post.thumbnail.src|tojpg|resize(1600) }}, {{ post.thumbnail.src|tojpg|resize(1380) }}" alt="">
+						<img src="{{slider.thumbnail}}|tojpg" srcset="{{ slider.thumbnail.src|tojpg|resize(1920) }}, {{ slider.thumbnail.src|tojpg|resize(1600) }}, {{ slider.thumbnail.src|tojpg|resize(1380) }}" alt="">
 					</div>
 					<div class="carousel-caption">
 						<p> {{slider.title}} </p>
