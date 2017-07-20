@@ -800,7 +800,6 @@ body .card.news-card .card-block .card-text {
   height: 100%;
 }
 #carousel-container .swiper-container .image-container img {
-  max-height: 45em;
   width: 100%;
 }
 #carousel-container .swiper-container .swiper-pagination-bullet {
