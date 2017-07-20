@@ -1,9 +1,11 @@
 	<a href="{{post.link}}">
 		<div class="card news-card">
+			{% if post.thumbnail %}
 			<div class="image-container">
 				<img class="card-img-top" src="{{post.thumbnail}}" alt="Card image cap">
 				<div class="image-overlay"></div>
 			</div>
+			{% endif %}
 			<div class="card-block">
 				<p class="card-text">{{post.post_excerpt}}</p>
 				<p class="card-date">{{post.date}}</p>
