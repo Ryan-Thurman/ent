@@ -957,6 +957,8 @@ body .card.news-card .card-block .card-text {
   }
   #header-nav-mobile .navbar-nav>li {
     float: none;
+    position: static;
+    z-index: 1000;
   }
   #header-nav-mobile .navbar-nav>li>a {
     padding-top: 10px;
