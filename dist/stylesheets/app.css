@@ -797,7 +797,8 @@ body .card.news-card .card-block .card-text {
   }
 }
 #carousel-container .swiper-container .image-container {
-  height: 100%;
+  height: auto;
+  width: 100%;
 }
 #carousel-container .swiper-container .image-container img {
   width: 100%;
