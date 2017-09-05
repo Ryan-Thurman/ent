@@ -1,0 +1,33 @@
+{% extends 'base.twig' %} {% block content %}
+<form action="{{site.url}}/wp-admin/admin-ajax.php" method="POST" id='filter'>
+	<h3> Select Category </h3>
+		{% for category in categories %}
+			<input type="checkbox" name='{{category.name}}' value='{{category.id}}'>{{category.name}}</input>
+		{% endfor %}
+	
+	<button>Apply filter</button>
+	{# <input type="hidden" name="action" value="myfilter"> #}
+	<form>
+		<div id="response"></div>
+
+		<script>
+			jQuery(function ($) {
+				$('#filter').find('input:checkbox').change(function () {
+					var filter = $('#filter');
+					$.ajax({
+						url: filter.attr('action'),
+						data: { action: "myfilter", data : filter.serializeArray() }, // form data
+						type: filter.attr('method'), // POST
+						beforeSend: function (xhr) {
+							filter.find('button').text('Processing...'); // changing the button label
+						},
+						success: function (data) {
+							filter.find('button').text('Apply filter'); // changing the button label back
+							$('#response').html(data); // insert data
+						}
+					});
+					return false;
+				});
+			});
+		</script>
+		{% endblock %}

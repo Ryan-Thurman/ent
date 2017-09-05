@@ -13,12 +13,14 @@ if ( ! class_exists( 'Timber' ) ) {
 }
 
 Timber::$dirname = array('templates', 'views');
+
 Timber::$locations = array(
 	get_template_directory() . "/templates/Navs",
 	get_template_directory() . "/templates/Home",
 	get_template_directory() . "/templates/About",
 	get_template_directory() . "/templates/Projects",
 	get_template_directory() . "/templates/Contact",
+	get_template_directory() . "/templates/Dashboard",
 	);
 
 class StarterSite extends TimberSite {
@@ -85,3 +87,54 @@ function custom_search( $query ) {
 }
  
 add_action( 'pre_get_posts', 'custom_search' );
+
+function dashboard_filter_function(){
+	$cat_ids = array();
+
+	foreach($_POST['data'] as $arr){
+		array_push($cat_ids, $arr['value']);
+	};
+
+	$args = array(
+    'post_type' => 'projects',
+		'posts_per_page' => -1,
+		'category__in' => $cat_ids
+	);
+
+	$query = new WP_Query( $args );
+
+	if( $query->have_posts() ) :
+		while( $query->have_posts() ): $query->the_post();
+			echo '<h2>' . $query->post->post_title . '</h2>';
+		endwhile;
+		wp_reset_postdata();
+	else :
+		echo 'no projects found';
+	endif;
+
+	die();
+	// $args = array(
+	// 	'orderby' => 'title', // we will sort posts by title
+	// );
+ 
+	// // for taxonomies / categories
+	// if( isset( $_POST['catfilter'] ) )
+	// 	$args['tax_query'] = array(
+	// 		array(
+	// 			'taxonomy' => 'category',
+	// 			'field' => 'id',
+	// 			'terms' => $_POST['catfilter']
+	// 		)
+	// 	);
+ 
+	// $query = new WP_Query( $args );
+	// else :
+	// 	echo 'No posts found';
+	// endif;
+ 
+	// die();
+};
+ 
+ 
+add_action('wp_ajax_myfilter', 'dashboard_filter_function'); 
+add_action('wp_ajax_nopriv_myfilter', 'dashboard_filter_function'); 

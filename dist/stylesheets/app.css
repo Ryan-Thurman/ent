@@ -902,7 +902,7 @@ body .card.news-card .card-block .card-text {
   background-color: #267788;
   position: absolute;
   top: 80px;
-  z-index: 100;
+  z-index: -2;
   left: 0px;
   width: 100%;
   opacity: 0;
@@ -913,9 +913,11 @@ body .card.news-card .card-block .card-text {
 }
 #header-nav-desktop #nav-search.show-nav {
   opacity: 1;
+  z-index: 100;
 }
 #header-nav-desktop #nav-search.no-show-nav {
   opacity: 0;
+  z-index: -2;
 }
 #header-nav-desktop #nav-search .form-control {
   border-top: none;
