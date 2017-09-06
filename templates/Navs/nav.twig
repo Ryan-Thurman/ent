@@ -59,6 +59,12 @@
 					<i class="fa fa-twitter"></i>
 						</a>
 				</li>
+				<li class="divider"></li>
+					{% if user %}
+						<li> <a class="btn btn-yellow" href="/login">Login</a> </li>
+						{% else %}
+						<li> <a class="btn btn-yellow" href="/login">Logout</a> </li>
+					{% endif %}
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
@@ -162,6 +168,8 @@
 								</li>
 							</ul>
 						</li>
+						<li class="divider"></li>
+						<li> <a class="button" href="/login">Login</a> </li>
 					</ul>
 					<p>Copyright @2017 IDW Entertainment. All Rights Reserved.</p>
 				</div>

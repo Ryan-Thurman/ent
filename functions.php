@@ -34,6 +34,9 @@ class StarterSite extends TimberSite {
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'pre_get_posts', array( $this, 'custom_search' ) );
+		add_action('wp_ajax_myfilter', array( $this, 'filter' ) ); 
+		add_action('wp_ajax_nopriv_myfilter', array( $this, 'filter' ) );
 		parent::__construct();
 	}
 
@@ -46,31 +49,19 @@ class StarterSite extends TimberSite {
 	}
 
 	function add_to_context( $context ) {
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
 		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
 		return $context;
 	}
 
-	function myfoo( $text ) {
-		$text .= ' bar!';
-		return $text;
-	}
-
 	function add_to_twig( $twig ) {
-		/* this is where you can add your own functions to twig */
+		/* Example */
 		$twig->addExtension( new Twig_Extension_StringLoader() );
-		$twig->addFilter('myfoo', new Twig_SimpleFilter('myfoo', array($this, 'myfoo')));
+		$twig->addFilter('example', new Twig_SimpleFilter('example', array($this, 'example')));
 		return $twig;
 	}
 
-}
-
-new StarterSite();
-
-
-function custom_search( $query ) {
+	function custom_search( $query ) {
     if ( is_search() && $query->is_main_query() && $query->get( 's' ) ) {
         $query->set(
             'post_type', array('post', 'projects'),
@@ -84,57 +75,28 @@ function custom_search( $query ) {
         );
         return $query;
     }
-}
- 
-add_action( 'pre_get_posts', 'custom_search' );
+	} 
+	
+	function filter( ) {
+			$cat_ids = array();
 
-function dashboard_filter_function(){
-	$cat_ids = array();
+			foreach($_POST['data'] as $arr) {
+				array_push($cat_ids, $arr['value']);
+			};
 
-	foreach($_POST['data'] as $arr){
-		array_push($cat_ids, $arr['value']);
-	};
+			$args = array(
+				'post_type' => 'projects',
+				'posts_per_page' => -1,
+				'category__in' => $cat_ids
+			);
 
-	$args = array(
-    'post_type' => 'projects',
-		'posts_per_page' => -1,
-		'category__in' => $cat_ids
-	);
-
-	$query = new WP_Query( $args );
-
-	if( $query->have_posts() ) :
-		while( $query->have_posts() ): $query->the_post();
-			echo '<h2>' . $query->post->post_title . '</h2>';
-		endwhile;
-		wp_reset_postdata();
-	else :
-		echo 'no projects found';
-	endif;
-
-	die();
-	// $args = array(
-	// 	'orderby' => 'title', // we will sort posts by title
-	// );
- 
-	// // for taxonomies / categories
-	// if( isset( $_POST['catfilter'] ) )
-	// 	$args['tax_query'] = array(
-	// 		array(
-	// 			'taxonomy' => 'category',
-	// 			'field' => 'id',
-	// 			'terms' => $_POST['catfilter']
-	// 		)
-	// 	);
- 
-	// $query = new WP_Query( $args );
-	// else :
-	// 	echo 'No posts found';
-	// endif;
- 
-	// die();
+			$context = Timber::get_context();
+			$context['filtered'] = Timber::get_posts($args);
+			echo Timber::render( 'dashboard-filtered.twig', $context );
+			
+			die();
+		}
 };
- 
- 
-add_action('wp_ajax_myfilter', 'dashboard_filter_function'); 
-add_action('wp_ajax_nopriv_myfilter', 'dashboard_filter_function'); 
+
+new StarterSite();
+
