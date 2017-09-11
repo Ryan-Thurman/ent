@@ -820,6 +820,23 @@ body .card.news-card .card-block .card-text {
   background-color: #ffc600;
 }
 
+.modal {
+  text-align: center;
+  padding: 0 !important;
+}
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
 #header-nav-desktop {
   min-height: 6em;
   background: #2e373c;
