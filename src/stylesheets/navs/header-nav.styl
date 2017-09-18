@@ -7,7 +7,7 @@
 	border-radius: 0px
 	position: relative
 	margin-bottom: 0
-	@media (max-width:850px)
+	@media (max-width:1000px)
 		display: none
 	.navbar-header
 		.navbar-brand
@@ -36,6 +36,17 @@
 				&:hover
 					color: $yellow
 		.nav.navbar-nav.navbar-right
+			width: 25em
+			.login-li
+				line-height: 4
+				.btn.btn-yellow
+					width: 9em
+					i.fa
+						position: relative
+						top: 2px
+						left: -5px
+						font-size: 19px
+						color: $dark-blue
 			.nav-non-link
 				position: relative
 				display: block
@@ -44,10 +55,10 @@
 				line-height: 3
 				font-size: 14px
 			.divider
-				height: 2em
+				height: 35px
 				width: 2px
 				background-color: $yellow
-				margin: 7% 0 0 0
+				margin: 4% 2% 0 1%
 			i
 				font-size: 15px
 				color: $light-blue
@@ -103,9 +114,9 @@
 	position: relative
 	margin-bottom: 0
 	z-index: 9000
-	@media (min-width:850px)
+	@media (min-width:1000px)
 		display: none
-	@media (max-width: 849px)
+	@media (max-width: 999px)
 		.navbar-collapse.collapse
 			display: none !important
 		.navbar-collapse.collapse.in

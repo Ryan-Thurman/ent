@@ -1,5 +1,28 @@
 {% block context %}
-	{% for thing in filtered %}
-		{{ thing.title }}
-	{% endfor %}
+	{% for project in filtered %}
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<a href="{{project.link}}">
+				<div class="card">
+					<div class="image-container">
+						<img class="card-img-top" src="{{project.thumbnail}}" alt="Card image cap">
+						<div class="image-overlay"></div>
+					</div>
+					<div class="card-block">
+						<div class="card-title">
+							{{project.title}}
+						</div>
+						<div class="project-categories">
+							{% for cat in project.categories %}
+							<span>{{cat|title}}</span> {% endfor %}
+						</div>
+						<div class="project-categories-icons">
+							{% for cat in project.categories %}
+							<div class="c_icon {{cat}}"></div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+		{% endfor %}
 {% endblock %}

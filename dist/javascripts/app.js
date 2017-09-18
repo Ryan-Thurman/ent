@@ -10613,7 +10613,8 @@ jQuery(document).ready(function($) {
 
     // Perform AJAX login on form submit
     $('form#login').on('submit', function(e){
-        $('form#login p.status').show().text(ajax_login_object.loadingmessage);
+				$('form#login p.status').show().text(ajax_login_object.loadingmessage)
+				.addClass('alert-info center')
         $.ajax({
             type: 'POST',
             dataType: 'json',
@@ -10624,11 +10625,13 @@ jQuery(document).ready(function($) {
                 'password': $('form#login #password').val(), 
                 'security': $('form#login #security').val() },
             success: function(data){
-                $('form#login p.status').text(data.message);
                 if (data.loggedin == true){
-                    document.location.href = '/account';
+									$('form#login p.status').text(data.message)
+									.addClass('alert-success center')
+                    document.location.href = '/dashboard';
                 } else {
-									console.log('didnt work')
+									$('form#login p.status').text(data.message)
+									.addClass('alert-danger center')
 								}
             }
         });
@@ -10637,6 +10640,69 @@ jQuery(document).ready(function($) {
 
 });
 
+
+
+});
+
+require.register("javascript/ajax-registration.js", function(exports, require, module) {
+jQuery(document).ready(function($) {
+ 
+  $('#reg-new-user').click( function(event) {
+		event.preventDefault();		
+    
+    var reg_nonce = $('#new_user_nonce').val();
+    var reg_user  = $('#reg_username').val();
+    var reg_pass  = $('#reg_pass').val();
+    var reg_mail  = $('#reg_email').val();
+    var reg_name  = $('#reg_name').val();
+    var reg_nick  = $('#reg_nickname').val();
+ 
+    var ajax_url = ajax_register_object.ajax_url; 
+    
+    var data = {
+      action: 'register_user',
+      nonce: reg_nonce,
+      user: reg_user,
+      pass: reg_pass,
+      mail: reg_mail,
+      // name: reg_name,
+      nick: reg_nick,
+		}; 
+    
+    $.post( ajax_url, data, function(response) {
+ 
+      if( response ) {
+        if( response === '1' ) {
+					$('.result-message').html('Your submission is complete.').addClass('alert-success').show();
+					document.location.href = '/myaccount';
+        } else {
+          $('.result-message').html( response ).addClass('alert-danger').show(); 
+        }
+      }
+    });
+  });
+});
+});
+
+require.register("javascript/dashboard-filter.js", function(exports, require, module) {
+jQuery(document).ready(function ($) {
+	
+	$('#filter').find('input:checkbox').change(function () {
+		var filter = $('#filter');
+		$.ajax({
+			url: filter.attr('action'),
+			data: {
+				action: "myfilter",
+				data: filter.serializeArray()
+			}, 
+			type: filter.attr('method'), 
+			success: function (data) {
+				$('#response').html(data);
+			}
+		});
+		return false;
+	});
+});
 });
 
 require.register("javascript/search.js", function(exports, require, module) {

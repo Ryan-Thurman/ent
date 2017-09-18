@@ -1,0 +1,73 @@
+@import "../../stylesheets/_vars.styl"
+.modal 
+  text-align: center
+  padding: 0!important
+	.modal-dialog 
+		display: inline-block
+		text-align: left
+		vertical-align: middle
+		width: 400px;
+		margin: 0 auto
+		@media (max-width: 470px)
+			width: 90%
+		.modal-content
+			border-radius: 0 !important
+			background-color: $light-gray
+			.modal-header
+				border: none
+				span
+					position: relative
+					left: -5px
+					font-size: 20px
+					color: $light-blue
+				.close
+					opacity: 1
+			.modal-body
+				input::-webkit-input-placeholder
+					text-align: center
+					:-moz-placeholder
+						text-align: center
+					::-moz-placeholder
+						text-align: center
+					:-ms-input-placeholder
+						text-align: center
+				padding: 0 8%
+				#login-header
+					margin-bottom: 6%
+					h2
+						margin-bottom: 0
+						color: $dark-blue
+			.modal-footer
+				border: none
+				padding-top: 0
+
+.modal:before 
+	content: ''
+	display: inline-block
+	height: 100%
+	vertical-align: middle
+	margin-right: -4px
+
+#or-header 
+	overflow: hidden
+	text-align: center
+	color: $light-blue
+	margin: 0 auto 4% auto
+
+#or-header:before,
+#or-header:after 
+	background-color: $light-blue
+	content: ""
+	display: inline-block
+	height: 1px
+	position: relative
+	vertical-align: middle
+	width: 50%
+
+#or-header:before 
+	right: 0.5em
+	margin-left: -50%
+
+#or-header:after 
+	left: 0.5em
+	margin-right: -50%

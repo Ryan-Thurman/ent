@@ -13,7 +13,8 @@ jQuery(document).ready(function($) {
 
     // Perform AJAX login on form submit
     $('form#login').on('submit', function(e){
-        $('form#login p.status').show().text(ajax_login_object.loadingmessage);
+				$('form#login p.status').show().text(ajax_login_object.loadingmessage)
+				.addClass('alert-info center')
         $.ajax({
             type: 'POST',
             dataType: 'json',
@@ -24,11 +25,13 @@ jQuery(document).ready(function($) {
                 'password': $('form#login #password').val(), 
                 'security': $('form#login #security').val() },
             success: function(data){
-                $('form#login p.status').text(data.message);
                 if (data.loggedin == true){
-                    document.location.href = '/account';
+									$('form#login p.status').text(data.message)
+									.addClass('alert-success center')
+                    document.location.href = '/dashboard';
                 } else {
-									console.log('didnt work')
+									$('form#login p.status').text(data.message)
+									.addClass('alert-danger center')
 								}
             }
         });
@@ -36,3 +39,5 @@ jQuery(document).ready(function($) {
     });
 
 });
+
+

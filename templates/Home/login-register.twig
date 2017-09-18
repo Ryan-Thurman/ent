@@ -1,0 +1,93 @@
+<!-- Login modal -->
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"></h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+			</div>
+			<div class="modal-body">
+
+				<div class="center" id="login-header">
+					<h2>LOG IN</h2>
+					<span>to your account</span>
+				</div>
+
+				<form id="login" action="login" method="post" class="form">
+					<p class="status"></p>
+					<div class="form-group">
+						<input class="form-control" id="username" type="text" name="username" placeholder="Username">
+					</div>
+					<div class="form-group">
+						<input class="form-control" id="password" type="password" name="password" placeholder="Password">
+					</div>
+					<div class="form-group center">
+						<input class="btn btn-yellow submit_button" type="submit" value="LOGIN" name="submit">
+					</div>
+					{{ function ('wp_nonce_field', 'ajax-register-nonce', 'idwe_login_security') }}
+				</form>
+			</div>
+			<div class="modal-footer">
+				<div class="center">
+					<p id="or-header">or</p>
+					<button type="button" class="btn btn-db" data-toggle="modal" data-target="#RegModal" data-dismiss="modal">
+  				REGISTER
+				</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Register Modal -->
+<div class="modal fade" id="RegModal" tabindex="-1" role="dialog" aria-labelledby="RegModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"></h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+			</div>
+			<div class="modal-body">
+				<div class="center" id="reg-header">
+						<h2>REGISTER NOW!</h2>
+						<span>See Current & Upcoming Projects</span>
+					</div>
+				<div class="registration-form">
+					<form class="form form-horizontal registraion-form" role="form">
+						<div class="form-group">
+							<label for="name" class="sr-only">Your Name</label>
+							<input type="text" name="name" id="reg_name" placeholder="Your Name" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label for="email" class="sr-only">Your Email</label>
+							<input type="email" name="email" id="reg_email" placeholder="Your Email" class="form-control" />
+						</div>
+						{# <div class="form-group">
+							<label for="nick" class="sr-only">Your Nickname</label>
+							<input type="text" name="nick" id="reg_nickname" placeholder="Your Nickname" class="form-control" />
+						</div> #}
+						<div class="form-group">
+							<label for="username" class="sr-only">Choose Username</label>
+							<input type="text" name="username" id="reg_username" placeholder="Choose Username" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label for="pass" class="sr-only">Choose Password</label>
+							<input type="password" name="pass" id="reg_pass" placeholder="Choose Password" class="form-control" />
+							<span class="help-block">PASSWORD MUST BE 8 CHARACTERS</span>
+						</div>
+						{{ function ('wp_nonce_field', 'new_user', 'new_user_nonce') }}
+						<div class="form-group center">
+							<input type="submit" class="btn btn-yellow" id="reg-new-user" value="Register" />
+						</div>
+					</form>
+					<div class="alert result-message" style="display: none;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

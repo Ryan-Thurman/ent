@@ -61,12 +61,14 @@
 				</li>
 				<li class="divider"></li>
 					{% if user %}
-						<li> 
-							<a class="btn btn-yellow" href="/login">Login</a>
+						<li class="login-li">
+							<a class="btn btn-yellow" href="/login">Logout</a>
 						</li>
 						{% else %}
-						<li>
-							<a class="btn btn-yellow" href="/login">Logout</a>
+						<li class="login-li"> 
+							<button type="button" class="btn btn-yellow" data-toggle="modal" data-target="#loginModal">
+  							<i class="fa fa-user" aria-hidden="true"></i> LOG IN
+							</button>
 						</li>
 					{% endif %}
 			</ul>
