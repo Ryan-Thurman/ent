@@ -21,6 +21,7 @@ Timber::$locations = array(
 	get_template_directory() . "/templates/Projects",
 	get_template_directory() . "/templates/Contact",
 	get_template_directory() . "/templates/Dashboard",
+	get_template_directory() . "/templates/Account",
 	);
 
 class StarterSite extends TimberSite {
@@ -82,3 +83,4 @@ new StarterSite();
 require_once(get_template_directory() . '/helper-functions/ajax-login.php');
 require_once(get_template_directory() . '/helper-functions/ajax-register.php');
 require_once(get_template_directory() . '/helper-functions/dashboard-filter.php');
+require_once(get_template_directory() . '/helper-functions/wordpress-fixes.php');

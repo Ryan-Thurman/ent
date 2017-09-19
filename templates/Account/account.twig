@@ -1,0 +1,12 @@
+{% extends "base.twig" %} {% block content %}
+<div class="container-fluid" id="account">
+	<div class="row">
+		<div class="col-xs-12 center">
+			<h3>Account</h3>
+			<p>{{user.first_name}} {{user.last_name}}</p>
+			<a href="/dashboard" class="btn btn-db">Dashboard</a>
+		</div>
+	</div>
+</div>
+{% include 'contact-form.twig' %}
+{% endblock %}

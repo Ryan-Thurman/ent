@@ -3,6 +3,11 @@
 function filter_init() {
 	wp_register_script('dashboard-filter', get_template_directory_uri() . '/src/javascript/dashboard-filter.js', array('jquery'), null, false);
   wp_enqueue_script('dashboard-filter');
+
+	wp_localize_script( 'dashboard-filter', 'ajax_filter_object', array(
+        'ajax_url' => home_url() . '/wp-admin/admin-ajax.php',
+      )
+  );
 }
 
 add_action('wp_enqueue_scripts', 'filter_init', 110);

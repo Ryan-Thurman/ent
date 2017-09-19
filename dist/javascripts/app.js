@@ -10689,8 +10689,11 @@ jQuery(document).ready(function ($) {
 	
 	$('#filter').find('input:checkbox').change(function () {
 		var filter = $('#filter');
+
+		var ajax_url = ajax_filter_object.ajax_url; 
+
 		$.ajax({
-			url: filter.attr('action'),
+			url: ajax_url,
 			data: {
 				action: "myfilter",
 				data: filter.serializeArray()

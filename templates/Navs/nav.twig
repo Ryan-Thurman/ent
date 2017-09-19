@@ -62,7 +62,7 @@
 				<li class="divider"></li>
 					{% if user %}
 						<li class="login-li">
-							<a class="btn btn-yellow" href="/login">Logout</a>
+							<a class="btn btn-yellow" href="{{ function ('wp_logout_url', '/') }}">Logout</a>
 						</li>
 						{% else %}
 						<li class="login-li"> 
