@@ -1,15 +1,7 @@
 <?php
 
 function email_to_admin() {
-    /**
-     * At this point, $_GET/$_POST variable are available
-     *
-     * We can do our normal processing here
-     */ 
-
-    // Sanitize the POST field
-    // Generate email content
-    // Send to appropriate email
+    
 		$name = $_POST['user'];
     $phone = $_POST['phone'] || 'N/A';
     $company = $_POST['company'] || 'N/A';

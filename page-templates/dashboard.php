@@ -6,7 +6,7 @@
 $context = Timber::get_context();
 
 $context['categories'] = Timber::get_terms('category', array('parent' => 0));
-// $context['filtered'] = dashboard::filter();
+
 if( is_user_logged_in() ) {
 	Timber::render( 'dashboard.twig', $context );
 } else {
