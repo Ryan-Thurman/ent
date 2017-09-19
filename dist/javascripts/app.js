@@ -10697,7 +10697,9 @@ jQuery(document).ready(function ($) {
 			}, 
 			type: filter.attr('method'), 
 			success: function (data) {
-				$('#response').html(data);
+				$('#response').empty();
+				// $(data).appendTo('#response').hide().fadeIn(1000)
+				$('#response').html(data).hide().fadeIn(500)
 			}
 		});
 		return false;

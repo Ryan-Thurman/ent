@@ -1,1 +1,35 @@
 @import "../../stylesheets/_vars.styl"
+#dashboard_projects
+	a
+		text-decoration: none
+	.card
+		.image-container
+			height: 100%
+			width: 100%
+			position: relative	
+			img
+				width: 100%
+		.card-block
+			padding: 5%
+			min-height: 10em
+			.card-title
+				font-family: "Nudista-semi-bold"
+				font-size: 18px
+				margin-bottom: 2%
+				color: #fff
+				min-height: 3em
+				&:hover
+					color: #fff
+			.project-categories
+				margin-bottom: 2%
+				span
+					color: $yellow
+					font-size: 12px
+			.project-categories-icons
+				padding-right: 6px
+				.btn-yellow
+					z-index: 200
+					width: 2.2em
+					float: right
+					.glyphicon
+						font-size: 22px
