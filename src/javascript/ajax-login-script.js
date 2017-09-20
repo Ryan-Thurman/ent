@@ -1,17 +1,9 @@
 jQuery(document).ready(function($) {
-
-    // Show the login dialog box on click
-    $('a#show_login').on('click', function(e){
-        $('body').prepend('<div class="login_overlay"></div>');
-        $('form#login').fadeIn(500);
-        $('div.login_overlay, form#login a.close').on('click', function(){
-            $('div.login_overlay').remove();
-            $('form#login').hide();
-        });
-        e.preventDefault();
-    });
-
-    // Perform AJAX login on form submit
+	// Perform AJAX login on form submit
+	$('#mobileLogin').on('click', function(){
+		$('.navbar-toggle').trigger('click')
+	})
+	
     $('form#login').on('submit', function(e){
 				$('form#login p.status').show().text(ajax_login_object.loadingmessage)
 				.addClass('alert-info center')

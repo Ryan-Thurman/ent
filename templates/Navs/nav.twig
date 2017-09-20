@@ -175,7 +175,17 @@
 							</ul>
 						</li>
 						<li class="divider"></li>
-						<li> <a class="button" href="/login">Login</a> </li>
+						{% if user %}
+						<li class="login-li">
+							<a class="btn btn-yellow" href="{{ function ('wp_logout_url', '/') }}">Logout</a>
+						</li>
+						{% else %}
+						<li class="login-li"> 
+							<button type="button" class="btn btn-yellow" data-toggle="modal" data-target="#loginModal" id="mobileLogin">
+  							<i class="fa fa-user" aria-hidden="true"></i> LOG IN
+							</button>
+						</li>
+					{% endif %}
 					</ul>
 					<p>Copyright @2017 IDW Entertainment. All Rights Reserved.</p>
 				</div>
