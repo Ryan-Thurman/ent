@@ -19,15 +19,17 @@ function reg_new_user() {
  
     $username = $_POST['user'];
     $password = $_POST['pass'];
-    $email    = $_POST['mail'];
-    $name     = $_POST['name'];
+    $email = $_POST['mail'];
+    $first = $_POST['first_name'];
+		$last = $_POST['last_name']
     // $nickname    = $_POST['nick'];
  
     $userdata = array(
         'user_login' => $username,
         'user_pass'  => $password,
         'user_email' => $email,
-        'first_name' => $name,
+        'first_name' => $first,
+				'last_name' => $last,
         // 'nickname'   => $nickname,
     );
  
