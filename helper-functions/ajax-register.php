@@ -21,7 +21,7 @@ function reg_new_user() {
     $password = $_POST['pass'];
     $email = $_POST['mail'];
     $first = $_POST['first_name'];
-		$last = $_POST['last_name']
+		$last = $_POST['last_name'];
     // $nickname    = $_POST['nick'];
  
     $userdata = array(
