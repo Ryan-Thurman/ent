@@ -82,5 +82,6 @@ new StarterSite();
 
 require_once(get_template_directory() . '/helper-functions/ajax-login.php');
 require_once(get_template_directory() . '/helper-functions/ajax-register.php');
+require_once(get_template_directory() . '/helper-functions/forgot-password.php');
 require_once(get_template_directory() . '/helper-functions/dashboard-filter.php');
 require_once(get_template_directory() . '/helper-functions/wordpress-fixes.php');

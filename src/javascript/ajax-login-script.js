@@ -5,8 +5,10 @@ jQuery(document).ready(function($) {
 	})
 	
     $('form#login').on('submit', function(e){
+
 				$('form#login p.status').show().text(ajax_login_object.loadingmessage)
 				.addClass('alert-info center')
+				
         $.ajax({
             type: 'POST',
             dataType: 'json',

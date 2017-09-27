@@ -693,6 +693,15 @@ body .btn.btn-lb:hover {
   color: #2e373c;
   border: 1px solid #2e373c;
 }
+body .btn.btn-lp {
+  background-color: transparent;
+  color: #5f5f5f;
+  text-decoration: underline;
+  font-style: italic;
+}
+body .btn.btn-lp:hover {
+  color: #c8c8c8;
+}
 body .image-overlay {
   position: absolute;
   height: 100%;

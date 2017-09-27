@@ -11,7 +11,7 @@ function email_to_admin() {
 
 		$subject = 'IDWE contact request From '.$name;
 
-		$headers = 'From: '.$name.' <'.$emailTo.'>' . PHP_EOL  . 'Reply-To: ' .$email;
+		$headers = 'From: '.$name.'';
 		
 		wp_mail($emailTo, $subject, $message, $headers);
 	

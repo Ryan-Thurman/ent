@@ -27,17 +27,62 @@
 					<div class="form-group center">
 						<input class="btn btn-yellow submit_button" type="submit" value="LOGIN" name="submit">
 					</div>
-					{{ function ('wp_nonce_field', 'ajax-register-nonce', 'idwe_login_security') }}
+					{{ function ('wp_nonce_field', 'ajax-login-nonce', 'idwe_login_security') }}
 				</form>
 			</div>
 			<div class="modal-footer">
 				<div class="center">
+					<button type="button" class="btn btn-lp" data-toggle="modal" data-target="#lpModal" data-dismiss="modal">
+  				lost your password?
+					</button>
 					<p id="or-header">or</p>
+					<button type="button" class="btn btn-db" data-toggle="modal" data-target="#RegModal" data-dismiss="modal">
+  				REGISTER
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Lost Password modal -->
+
+<div class="modal fade" id="lpModal" tabindex="-1" role="dialog" aria-labelledby="lpLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"></h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+			</div>
+			<div class="modal-body" id="lostPassword">
+
+				<div class="center" id="login-header">
+					<h2>Password Reset</h2>
+					<span>ENTER INFORMATION BELOW</span>
+				</div>
+
+				<form id="lostPasswordForm" method="post" class="form">
+					<p class="status"></p>
+					<div class="form-group">
+						<label class="sr-only" for="user_login">Username or E-mail:</label>
+						<input type="text" name="user_login" id="user_login" class="form-control" value="" placeholder="Username or Email" />
+					</div>
+					<div class="form-group center">
+						<input type="submit" name="wp-submit" id="wp-submit" class="btn btn-yellow" value="Get New Password" />
+					</div>
+					{{ function ('wp_nonce_field', 'ajax-lostpassword-nonce', 'idwe_lostpassword_security') }}
+					{% do action( 'lostpassword_form' ) %}
+				</form>
+			</div>
+			{# <div class="modal-footer">
+				<div class="center">
 					<button type="button" class="btn btn-db" data-toggle="modal" data-target="#RegModal" data-dismiss="modal">
   				REGISTER
 				</button>
 				</div>
-			</div>
+			</div> #}
 		</div>
 	</div>
 </div>
