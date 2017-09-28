@@ -53,7 +53,6 @@ function lost_password() {
 	// Redefining user_login ensures we return the right case in the email.
 	$user_login = $user_data->user_login;
 	$user_email = $user_data->user_email;
-	echo $user_email;
 	$key = get_password_reset_key( $user_data );
 
 	if ( is_wp_error( $key ) ) {
@@ -65,20 +64,13 @@ function lost_password() {
 	$message .= sprintf(__('Username: %s'), $user_login) . "\r\n\r\n";
 	$message .= __('If this was a mistake, just ignore this email and nothing will happen.') . "\r\n\r\n";
 	$message .= __('To reset your password, visit the following address:') . "\r\n\r\n";
+
 	// replace PAGE_ID with reset page ID
 	$message .= esc_url( get_permalink(134) . "/?action=rp&key=$key&login=" . rawurlencode($user_login) ) . "\r\n";
 
-	if ( is_multisite() ) {
-		$blogname = $GLOBALS['current_site']->site_name;
-	}
-
-	else {
-	
 	$title = sprintf( __('[%s] Password Reset'));
 	$title = apply_filters( 'retrieve_password_title', $title, $user_login, $user_data );
 	$message = apply_filters( 'retrieve_password_message', $message, $key, $user_login, $user_data );
-
-	}
 
 	if ( wp_mail( $user_email, wp_specialchars_decode( $title ), $message ) ) {
 		$errors->add('confirm', __('Check your e-mail for the confirmation link.'), 'message');
@@ -88,22 +80,18 @@ function lost_password() {
 	}
 	// display error message
 	if ( $errors->get_error_code() ) {
-		echo 'p class=error' .$errors->get_error_message( $errors->get_error_code() ) . '</p>';
+		echo $errors->get_error_message( $errors->get_error_code() );
 	}
-	// return proper result
 	die();
 }
-/*
- *	@desc	Process reset password
- */
+
+// Reset Password func
+
 function reset_password_func() {
 
 	$errors = new WP_Error();
-	$nonce = $_POST['nonce'];
 
-	if ( ! wp_verify_nonce( $nonce, 'rs_user_reset_password_action' ) )
-        die ( 'Security checked!');
-	if( !isset( $_POST['nonce'] ) || !wp_verify_nonce( $_POST['nonce'], 'ajax-lostpassword-nonce' ) ) {
+	if( !isset( $_POST['nonce'] ) || !wp_verify_nonce( $_POST['nonce'], 'ajax-user-reset-password-nonce' ) ) {
     echo( 'Please Try Again');
 		die();
 	}
@@ -115,22 +103,14 @@ function reset_password_func() {
 
 	$user = check_password_reset_key( $key, $login );
 
-	// check to see if user added some string
+	// make sure user entered a password for both
 	if( empty( $pass1 ) || empty( $pass2 ) )
 		$errors->add( 'password_required', __( 'Password is required field' ) );
 
-	// is pass1 and pass2 match?
+	// do the passwords match?
 	if ( isset( $pass1 ) && $pass1 != $pass2 )
 		$errors->add( 'password_reset_mismatch', __( 'The passwords do not match.' ) );
 
-	/**
-	 * Fires before the password reset procedure is validated.
-	 *
-	 * @since 3.5.0
-	 *
-	 * @param object           $errors WP Error object.
-	 * @param WP_User|WP_Error $user   WP_User object if the login and reset key match. WP_Error object otherwise.
-	 */
 	do_action( 'validate_password_reset', $errors, $user );
 
 	if ( ( ! $errors->get_error_code() ) && isset( $pass1 ) && !empty( $pass1 ) ) {
@@ -139,10 +119,9 @@ function reset_password_func() {
 		$errors->add( 'password_reset', __( 'Your password has been reset.' ) );
 	}
 
-	// display error message
 	if ( $errors->get_error_code() )
-		echo 'p class=error' .$errors->get_error_message( $errors->get_error_code() ) . '</p>';
+		//send back error message
+		echo $errors->get_error_message( $errors->get_error_code() );
 
-	// return proper result
 	die();
 }

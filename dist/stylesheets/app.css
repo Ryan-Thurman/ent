@@ -1540,6 +1540,26 @@ body .card.news-card .card-block .card-text {
   transition: opacity 0.3s ease-in-out;
 }
 
+#resetPassword .center h2 {
+  color: #2e373c;
+  margin-bottom: 0;
+}
+#resetPassword .center span {
+  font-size: 12px;
+  font-style: italic;
+}
+#resetPassword #resetPasswordForm {
+  width: 30em;
+  margin: 2em auto 0 auto;
+  background-color: #f5f5f5;
+  padding: 2% 2.5% 1% 2.5%;
+  border-radius: 6px;
+}
+#resetPassword #resetPasswordForm .hintContain .hint {
+  font-size: 11px;
+  color: #8d8d8d;
+}
+
 #search-form {
   margin: 4% auto;
 }

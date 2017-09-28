@@ -10615,7 +10615,6 @@ jQuery(document).ready(function ($) {
 		submit.attr("disabled", "disabled").addClass('disabled');
 
 		$.post(url, contents, function (data) {
-			console.log(data)
 			submit.removeAttr("disabled").removeClass('disabled');
 			message.html(data);
 		});
@@ -10623,31 +10622,27 @@ jQuery(document).ready(function ($) {
 	})
 	)
 
-	$("form#resetPasswordForm").submit(function () {
-		var submit = $("div#resetPassword #submit"),
-			preloader = $("div#resetPassword #preloader"),
-			message = $("div#resetPassword #message"),
+	$("form#resetPasswordForm").submit(function (e) {
+		e.preventDefault();
+
+		var submit = $("#resetPasswordForm #submit"),
+			message = $("#resetPasswordForm #message"),
 			contents = {
 				action: 'reset_pass',
-				nonce: this.rs_user_reset_password_nonce.value,
-				pass1: this.pass1.value,
-				pass2: this.pass2.value,
-				user_key: this.user_key.value,
-				user_login: this.user_login.value
-			};
+				nonce: $('#idwe_resetpassword_security').val(),
+				pass1: $('#resetPasswordForm #password_one').val(),
+				pass2: $('#resetPasswordForm #password_two').val(),
+				user_key: $('#resetPasswordForm #user_key').val(),
+				user_login: $('#resetPasswordForm #user_login').val()
+			},
+			url = ajax_fp_object.ajaxurl;
+
+			console.log(contents)
 
 		submit.attr("disabled", "disabled").addClass('disabled');
 
-		preloader.css({
-			'visibility': 'visible'
-		});
-
-		$.post(theme_ajax.url, contents, function (data) {
+		$.post(url, contents, function (data) {
 			submit.removeAttr("disabled").removeClass('disabled');
-
-			preloader.css({
-				'visibility': 'hidden'
-			});
 
 			message.html(data);
 		});
