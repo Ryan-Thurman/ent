@@ -34,6 +34,8 @@ function reg_new_user() {
     );
  
     $user_id = wp_insert_user( $userdata ) ;
+
+		wp_set_current_user($user_id);
  
     if( !is_wp_error($user_id) ) {
         echo '1';
