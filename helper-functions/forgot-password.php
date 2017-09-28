@@ -61,6 +61,8 @@ function lost_password() {
 		return $key;
 	}
 
+	$query_params = array('key' => $key, 'login' => $user_login);
+
 	$message = __('Someone requested that the password be reset for the following account:') . "\r\n\r\n";
 	$message .= network_home_url( '/' ) . "\r\n\r\n";
 	$message .= sprintf(__('Username: %s'), $user_login) . "\r\n\r\n";
@@ -68,10 +70,7 @@ function lost_password() {
 	$message .= __('To reset your password, visit the following address:') . "\r\n\r\n";
 
 	// replace PAGE_ID with reset page ID
-
-	$query_params = array('key' => '$key', 'login' => '$user_login');
-
-	$message .= esc_url( add_query_arg($query_params, get_permalink(358)) . "\r\n";
+	$message .= esc_url( add_query_arg($query_params, get_permalink(358) ) ) . "\r\n";
 
 	$title = sprintf( __('[%s] Password Reset'));
 	$title = apply_filters( 'retrieve_password_title', $title, $user_login, $user_data );
