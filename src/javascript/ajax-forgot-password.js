@@ -37,8 +37,6 @@ jQuery(document).ready(function ($) {
 			},
 			url = ajax_fp_object.ajaxurl;
 
-			console.log(contents)
-
 		submit.attr("disabled", "disabled").addClass('disabled');
 
 		$.post(url, contents, function (data) {

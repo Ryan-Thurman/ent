@@ -21,8 +21,10 @@ if( isset($_GET['login']) && !empty($_GET['login'])) {
 
 $errors = new WP_Error();
 
-if ($resetKey === "" || $resetlogin === "") {
-	
+// if ($resetKey === "" || $resetlogin === "") {
+// 	$errors->add('wronglink', __( 'Sorry you must have come to this page on accident'));
+// } else {
+
 	$check = check_password_reset_key($resetKey , $resetLogin);
 
 	if ( is_wp_error( $user ) ) {
@@ -34,7 +36,7 @@ if ($resetKey === "" || $resetlogin === "") {
 		$context['key'] = $resetKey;
 		$context['user_login'] = $resetLogin;
 	}
-}
+// }
 
 $context['errors'] = $errors;
 

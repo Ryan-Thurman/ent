@@ -68,7 +68,10 @@ function lost_password() {
 	$message .= __('To reset your password, visit the following address:') . "\r\n\r\n";
 
 	// replace PAGE_ID with reset page ID
-	$message .= esc_url( get_permalink(358) . "/?action=rp&key=$key&login=" . rawurlencode($user_login) ) . "\r\n";
+
+	$query_params = array('key' => '$key', 'login' => '$user_login');
+
+	$message .= esc_url( add_query_arg($query_params, get_permalink(358)) . "\r\n";
 
 	$title = sprintf( __('[%s] Password Reset'));
 	$title = apply_filters( 'retrieve_password_title', $title, $user_login, $user_data );
@@ -134,3 +137,4 @@ function custom_query_vars_filter($vars) {
   return $vars;
 }
 add_filter( 'query_vars', 'custom_query_vars_filter' );
+
