@@ -20,8 +20,7 @@ jQuery(document).ready(function($) {
       pass: reg_pass,
       mail: reg_mail,
 			first_name: reg_first_name,
-			last_name: reg_last_name,
-      // nick: reg_nick,
+			last_name: reg_last_name
 		}; 
     
     $.post( ajax_url, data, function(response) {
