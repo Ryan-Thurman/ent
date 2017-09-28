@@ -5,6 +5,8 @@
 
 $context = Timber::get_context();
 
+
+
 if( isset($_GET['key']) && !empty($_GET['key'])) {
 	$resetKey = $_GET['key'];
 } else {

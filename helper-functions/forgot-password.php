@@ -15,6 +15,8 @@ function ajax_forgot_password_init(){
 	//reset password
 	add_action( 'wp_ajax_nopriv_reset_pass', 'reset_password_func' );
 	add_action( 'wp_ajax_reset_pass', 'reset_password_func' );
+
+	
 }
 
 add_action('init', 'ajax_forgot_password_init');
@@ -125,3 +127,10 @@ function reset_password_func() {
 
 	die();
 }
+
+function custom_query_vars_filter($vars) {
+  $vars[] = 'key';
+  $vars[] .= 'login';
+  return $vars;
+}
+add_filter( 'query_vars', 'custom_query_vars_filter' );
