@@ -66,7 +66,7 @@ function lost_password() {
 	$message .= __('To reset your password, visit the following address:') . "\r\n\r\n";
 
 	// replace PAGE_ID with reset page ID
-	$message .= esc_url( get_permalink(134) . "/?action=rp&key=$key&login=" . rawurlencode($user_login) ) . "\r\n";
+	$message .= esc_url( get_permalink(358) . "/?action=rp&key=$key&login=" . rawurlencode($user_login) ) . "\r\n";
 
 	$title = sprintf( __('[%s] Password Reset'));
 	$title = apply_filters( 'retrieve_password_title', $title, $user_login, $user_data );
