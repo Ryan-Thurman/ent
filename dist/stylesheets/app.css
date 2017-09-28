@@ -460,11 +460,11 @@ h3 {
 }
 @font-face {
   font-family: 'Nudista-semi-bold';
-  src: url("../fonts/N1.eot"), url("../fonts/N1.eot?#iefix") format('embedded-opentype'), url("../fonts/N1.tff") format('truetype'), url("../fonts/N1.woff") format('woff');
+  src: url("../fonts/N1.eot"), url("../fonts/N1.eot?#iefix") format('embedded-opentype'),;
 }
 @font-face {
   font-family: 'Nudista-bold';
-  src: url("../fonts/N2.eot"), url("../fonts/N2.eot?#iefix") format('embedded-opentype'), url("../fonts/N2.tff") format("truetype"), url("../fonts/N2.woff") format('woff');
+  src: url("../fonts/N2.eot"), url("../fonts/N2.eot?#iefix") format('embedded-opentype'),;
 }
 .c_icon {
   height: 1.75em;

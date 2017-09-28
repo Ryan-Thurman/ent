@@ -17,6 +17,7 @@ jQuery(document).ready(function ($) {
 		$.post(url, contents, function (data) {
 			submit.removeAttr("disabled").removeClass('disabled');
 			message.html(data);
+			document.location.href = '/';
 		});
 		return false
 	})
@@ -41,8 +42,8 @@ jQuery(document).ready(function ($) {
 
 		$.post(url, contents, function (data) {
 			submit.removeAttr("disabled").removeClass('disabled');
-
 			message.html(data);
+			document.location.href = '/login';
 		});
 
 		return false;
