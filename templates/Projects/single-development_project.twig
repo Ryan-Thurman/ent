@@ -1,0 +1,52 @@
+{% extends "base.twig" %} 
+	{% block content %}
+	<div class="container-fluid no-padding">
+	<div class="row">
+		<div class="col-xs-12 topImage">
+			<img src="{{post.get_field('banner')}}" alt="">
+		</div>
+		<!-- end topimage -->
+	</div>
+	<!-- end row -->
+</div>
+<div class="container" id="project-content-section">
+	<div class="row">
+		<div class="col-xs-12 project-top">
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+					<h4>DEVELOPMENT PROJECTS</h4>
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<div class="category-info">
+						<div class="row">
+							<div class="col-xs-12 col-md-8">
+								<div class="project-categories">
+									{% for cat in post.categories %}
+									<div>
+										<p>{{cat|upper}}</p>
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="project-categories-icons">
+									{% for cat in post.categories %}
+									<div class="c_icon {{cat|replace({' ':''})|lower}}"></div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<h2>{{post.title}}</h2>
+		</div>
+		<div class="col-xs-12">
+			<h5>SYNOPSIS</h5>
+			<p>{{post.content}}</p>
+		</div>
+	</div>
+</div>
+{% endblock %}

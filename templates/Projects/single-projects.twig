@@ -30,7 +30,7 @@
 							<div class="col-xs-12 col-md-4">
 								<div class="project-categories-icons">
 									{% for cat in post.categories %}
-									<div class="c_icon {{cat}}"></div>
+									<div class="c_icon {{cat|replace({' ':''})|lower}}"></div>
 									{% endfor %}
 								</div>
 							</div>

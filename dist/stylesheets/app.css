@@ -758,6 +758,9 @@ body .card.news-card .card-block .card-text {
 .no-padding {
   padding: 0;
 }
+.center {
+  text-align: center;
+}
 
 #about-home {
   background-color: #f5f5f5;

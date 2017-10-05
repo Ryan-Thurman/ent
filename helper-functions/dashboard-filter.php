@@ -20,14 +20,14 @@ function filter( ) {
 	};
 
 	$args = array(
-		'post_type' => 'projects',
+		'post_type' => 'development_project',
 		'posts_per_page' => -1,
 		'category__in' => $cat_ids
 	);
 
 	$context = Timber::get_context();
 	$context['filtered'] = Timber::get_posts($args);
-	echo Timber::render( 'dashboard-filtered.twig', $context );
+	Timber::render( 'dashboard-filtered.twig', $context );
 			
 	die();
 }

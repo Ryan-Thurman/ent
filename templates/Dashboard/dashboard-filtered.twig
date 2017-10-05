@@ -16,7 +16,7 @@
 						</div>
 						<div class="project-categories-icons">
 							{% for cat in project.categories %}
-							<div class="c_icon {{cat}}"></div>
+							<div class="c_icon {{cat|replace({' ':''})|lower}}"></div>
 							{% endfor %}
 							<a href="{{project.pdf_download_link}}" class="pdf_input btn btn-yellow" download data-toggle="tooltip" data-placement="top" title="Download PDF"><span class="glyphicon glyphicon-download"></span></a>
 						</div>
