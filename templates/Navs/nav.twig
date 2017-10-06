@@ -24,19 +24,25 @@
 				<li>
 					<a href="/about">ABOUT</a>
 				</li>
-				<li class="divider"></li>
+				<li class="divider divider-option"></li>
 				<li>
 					<a href="/news-landing">NEWS</a>
 				</li>
-				<li class="divider"></li>
+				<li class="divider divider-option"></li>
 				<li>
 					<li>
 						<a href="/active-projects">ACTIVE PROJECTS</a>
 					</li>
-					<li class="divider"></li>
+					<li class="divider divider-option"></li>
 					<li>
 						<a href="/contact">CONTACT</a>
 					</li>
+					{% if user %}
+					<li class="divider divider-option"></li>
+					<li>
+						<a href="/dashboard">DASHBOARD</a>
+					</li>
+					{% endif %}
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li>
@@ -213,3 +219,5 @@
 		</div>
 	</div>
 </nav>
+
+{% include 'login-register.twig' %}
