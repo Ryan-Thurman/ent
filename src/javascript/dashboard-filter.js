@@ -1,6 +1,7 @@
 jQuery(document).ready(function ($) {
 	
 	$('#filter').find('input:checkbox').change(function (e) {
+		console.log(e.target.name)
 		if(e.target.name === 'all') {
 			$('input:checkbox').not(this).prop('checked', this.checked);
 		}
