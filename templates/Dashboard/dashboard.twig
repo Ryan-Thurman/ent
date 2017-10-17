@@ -8,6 +8,7 @@
 			<form action="{{site.url}}/wp-admin/admin-ajax.php" method="POST" id='filter'>
 				<h3> Categories </h3>
 				<ul>
+				<li><input type="checkbox" name='all' value='-1'><span>Select All / Deselect All</span></input> </li>
 					{% for category in categories %}
 					<li>
 						<input type="checkbox" name='{{category.name}}' value='{{category.id}}'><span>{{category.name | capitalize }}</span></input>

@@ -10737,7 +10737,11 @@ jQuery(document).ready(function($) {
 require.register("javascript/dashboard-filter.js", function(exports, require, module) {
 jQuery(document).ready(function ($) {
 	
-	$('#filter').find('input:checkbox').change(function () {
+	$('#filter').find('input:checkbox').change(function (e) {
+		if(e.target.name === 'all') {
+			$('input:checkbox').not(this).prop('checked', this.checked);
+		}
+
 		var filter = $('#filter');
 
 		var ajax_url = ajax_filter_object.ajax_url; 
@@ -10751,7 +10755,6 @@ jQuery(document).ready(function ($) {
 			type: filter.attr('method'), 
 			success: function (data) {
 				$('#response').empty();
-				// $(data).appendTo('#response').hide().fadeIn(1000)
 				$('#response').html(data).hide().fadeIn(500)
 			}
 		});
